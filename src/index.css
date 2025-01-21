@@ -28,6 +28,15 @@ html, body {
   perspective: 1000px; /* Provides a 3D perspective */
   margin-bottom: 170px;
 }
+.signup-card{
+  border-radius: 20px;
+  font-family: 'Inter';
+  font-weight: 900;
+  width: 800px;
+  box-shadow: 1px 1px 1px rgb(173, 172, 172);
+  perspective: 1000px; /* Provides a 3D perspective */
+  margin-bottom: 150px;
+}
 .building-container{
   border-radius: 20px;
   width: 800px; /* Set desired width */
@@ -42,12 +51,23 @@ html, body {
   width: 700px; /* Set desired width */
   max-width: 70%;
   background-color: #ffffff; /* Adjust to match your background */
-  margin: 20px;
+  margin-bottom: 20px;
   box-shadow: 0px 2px 4px rgb(173, 172, 172);
-
 }
 .login-form{
   gap: 300px;
+}
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+.wiggle {
+  animation: wiggle 0.5s ease-in-out infinite;
 }
 .checks{
   width: 40px;
@@ -111,6 +131,12 @@ html, body {
 }
 .checks-image{
   position: relative;
+}
+.arrowimg{
+  mix-blend-mode:color-burn;
+  color: #000;
+  position: relative;
+  margin-left: 100px;
 }
 .btn {
   background-color: #000;

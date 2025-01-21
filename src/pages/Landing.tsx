@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import BodyText from '../components/BodyText';
 import Demo from '../components/Demo';
 import Social from '../components/Social';
+
 function Landing() {
   const navigate = useNavigate();
 

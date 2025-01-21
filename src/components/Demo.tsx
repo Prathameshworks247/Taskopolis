@@ -7,6 +7,8 @@ import building4 from '../assets/buildings/b4.png';
 import building5 from '../assets/buildings/b5.png';
 import sound from '../assets/sounds/hammer-impacting-nail-metallic-fascinatedsound-1-00-02_ltBE1BSF.mp3'
 import sound2 from '../assets/sounds/mixkit-falling-bricks-388_oVB7rJ5s.wav'
+import arrow from '../assets/patterns/arrow.png'
+
 function Demo() {
   interface CheckedItems {
     [key: string]: boolean;
@@ -53,21 +55,21 @@ function Demo() {
           confetti({
             particleCount: 33,
             spread: 70,
-            origin: { x: 0.8, y: 0.2 },
+            origin: { x: 0.78, y: 0.36 },
           });
           break;
         case "item2":
           confetti({
             particleCount: 66,
             spread: 70,
-            origin: { x: 0.8, y: 0.3 },
+            origin: { x: 0.78, y: 0.46 },
           });
           break;
         case "item3":
           confetti({
             particleCount: 100,
             spread: 70,
-            origin: { x: 0.8, y: 0.4 },
+            origin: { x: 0.78, y: 0.56},
           });
           break;
         default:
@@ -84,7 +86,16 @@ function Demo() {
   };
 
   return (
-    <div className="d-flex flex-column justify-content-center align-items-center">
+    <div className="d-flex flex-column justify-content-center align-items-center" style={{marginTop: '50px'}}>
+      <div className="d-flex flex-row justify-content-center align-items-center">
+      <div>
+        <p className='wiggle fw-bold'>Complete your Tasks!!</p>
+          <img  className= 'arrowimg' src={arrow} style={{
+                  width: '80px',
+                  height:'80px'
+                }}/>
+      </div>
+      <div className="demo-task-cards d-flex flex-column" style={{marginLeft: '30px', marginTop:'90px'}}>
       <div className="demo-task-card d-flex justify-content-center align-items-center p-3 row bg-white">
         <h3 className="title mb-0 col-10">Complete Homework 📚</h3>
         <div className="col-2">
@@ -123,7 +134,9 @@ function Demo() {
           />
         </div>
       </div>
+      </div>
 
+      </div>
       <audio ref={buildRef}>
         <source src={sound} type="audio/mp3" />
         Your browser does not support the audio element.
