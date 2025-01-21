@@ -14,12 +14,53 @@ html, body {
 .taskopolis-card {
   border-radius: 20px;
   width: 800px; /* Set desired width */
-  max-width: 80%; /* Make it responsive */
+  max-width: 85%; /* Make it responsive */
   margin: auto;
-  background-color: #f8f9fa; /* Adjust to match your background */
+  background-color: #ffffff; /* Adjust to match your background */
   box-shadow: 0px 2px 4px rgb(173, 172, 172);
 }
+.login-card{
+  border-radius: 20px;
+  font-family: 'Inter';
+  font-weight: 900;
+  width: 800px;
+  box-shadow: 1px 1px 1px rgb(173, 172, 172);
+  perspective: 1000px; /* Provides a 3D perspective */
+  margin-bottom: 170px;
+}
+.building-container{
+  border-radius: 20px;
+  width: 800px; /* Set desired width */
+  max-width: 85%; /* Make it responsive */
+  height: 100px;
+  margin: auto;
+  background-color: #ffffff; /* Adjust to match your background */
+  box-shadow: 0px 2px 4px rgb(173, 172, 172);
+}
+.demo-task-card{
+  border-radius: 25px;
+  width: 700px; /* Set desired width */
+  max-width: 70%;
+  background-color: #ffffff; /* Adjust to match your background */
+  margin: 20px;
+  box-shadow: 0px 2px 4px rgb(173, 172, 172);
 
+}
+.login-form{
+  gap: 300px;
+}
+.checks{
+  width: 40px;
+  height: 40px;
+  border: 2px solid #000;
+  background-color: #f0f0f0;
+}
+.title-login{
+  position: absolute;
+  padding-left: 120px;
+  font-family: 'Inter';
+  font-weight: 800;
+}
 .title{
   padding-left: 120px;
   font-family: 'Inter';
@@ -67,4 +108,13 @@ html, body {
 }
 .buttons{
   width: 35%;
+}
+.checks-image{
+  position: relative;
+}
+.btn {
+  background-color: #000;
+}
+label{
+  font-weight: 300;
 }
