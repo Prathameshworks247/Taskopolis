@@ -8,6 +8,7 @@ import building5 from '../assets/buildings/b5.png';
 import sound from '../assets/sounds/hammer-impacting-nail-metallic-fascinatedsound-1-00-02_ltBE1BSF.mp3'
 import sound2 from '../assets/sounds/mixkit-falling-bricks-388_oVB7rJ5s.wav'
 import arrow from '../assets/patterns/arrow.png'
+import { div } from 'three/tsl';
 
 function Demo() {
   interface CheckedItems {
@@ -53,21 +54,21 @@ function Demo() {
       switch (name) {
         case "item1":
           confetti({
-            particleCount: 33,
+            particleCount: 100,
             spread: 70,
             origin: { x: 0.78, y: 0.36 },
           });
           break;
         case "item2":
           confetti({
-            particleCount: 66,
+            particleCount: 150,
             spread: 70,
             origin: { x: 0.78, y: 0.46 },
           });
           break;
         case "item3":
           confetti({
-            particleCount: 100,
+            particleCount: 200,
             spread: 70,
             origin: { x: 0.78, y: 0.56},
           });
@@ -85,11 +86,23 @@ function Demo() {
     
   };
 
+function getMessage(count: number) {
+  if (count <= 1) {
+    return <p className='wiggle fw-bold'>Complete your tasks!!</p>;
+  } else if (count === 2) {
+    return <p className='wiggle fw-bold ml-5'>Almost there!!</p>;
+  } else if (count === 3) {
+    return <p className='wiggle fw-bold ml-5'>Way to go!!</p>;
+  } else {
+    return null;
+  }
+}
   return (
     <div className="d-flex flex-column justify-content-center align-items-center" style={{marginTop: '50px'}}>
       <div className="d-flex flex-row justify-content-center align-items-center">
       <div>
-        <p className='wiggle fw-bold'>Complete your Tasks!!</p>
+        
+      {getMessage(count)}
           <img  className= 'arrowimg' src={arrow} style={{
                   width: '80px',
                   height:'80px'
@@ -160,14 +173,21 @@ function Demo() {
             key={index}
             className="building-slot"
             style={{
-              flex: 1,
+              flex:1,
               textAlign: 'center',
               padding: '10px',
-              borderRight: '1px solid grey',
             }}
           >
             {checkedTasks[task] && (
-              <img
+              <div style={{
+                flex:1,
+                textAlign: 'center',
+                borderRight: '2px solid grey',
+                width: '100%',
+                height: '100%',
+
+              }}>
+                <img
                 src={buildings[index]}
                 alt={`Building for ${task}`}
                 style={{
@@ -176,6 +196,8 @@ function Demo() {
                   height: '18%',
                 }}
               />
+              </div>
+              
             )}
           </div>
         ))}

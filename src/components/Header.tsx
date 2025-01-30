@@ -4,12 +4,14 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import image from '../assets/icons/image.png'
+import { useNavigate } from 'react-router-dom';
 
 
 
 function Header() {
+    const navigate = useNavigate()
     return(
-        <div className="taskopolis-card d-flex justify-content-center align-items-center p-1 row bg-white">
+        <div onClick={() => navigate('/')} className="taskopolis-card d-flex justify-content-center align-items-center p-1 row bg-white">
             <div className="col-2"><img
                 src={image}
                 alt="Taskopolis Icon"

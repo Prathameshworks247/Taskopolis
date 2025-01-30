@@ -113,7 +113,14 @@ html, body {
   cursor: pointer;
   font-weight: 900;
 }
-
+.social-icon{
+  max-height: 80%;
+  width: 10px;
+}
+.social-signup{
+  display: flex;
+  flex-direction: row;
+}
 .account-button {
   background-color: transparent; /* No background color */
   color: black;

@@ -23,9 +23,9 @@ function Landing() {
       <Header />
       </div>
 
-      <div className='d-flex gap-5' style={{ marginBottom: '250px' }}>
-      <div className='d-flex'  style={{ marginTop: '150px' }}><BodyText handlesignup={handleSignup} handlelogin={handleLogin} /></div>
-      <div><Demo/></div>
+      <div className='d-flex  flex-wrap justify-content-center' style={{ marginBottom: '250px' }}>
+      <div className='d-flex'  style={{ marginTop: '150px'}}><BodyText handlesignup={handleSignup} handlelogin={handleLogin} /></div>
+      <div style={{ marginLeft: '80px'}}><Demo/></div>
       </div>
       
       <div className='d-flex' style={{ marginBottom: '300px' }}>
