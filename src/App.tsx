@@ -5,7 +5,11 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import Landing from './pages/Landing';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
-import Home from './pages/Home';
+import Tasks from './pages/Tasks';
+import Rank from './pages/Rank';
+import Cityscape from './pages/Cityscape';
+import Streak from './pages/Streak';
+
 
 function App() {
     return (
@@ -14,7 +18,10 @@ function App() {
         <Route path="/" element={<Landing />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/home" element={<Home />} />
+        <Route path="/tasks" element={<Tasks />} />
+        <Route path="/streak" element={<Streak />} />
+        <Route path="/cityscape" element={<Cityscape />} />
+        <Route path="/rank" element={<Rank />} />
       </Routes>
     </Router>
     );

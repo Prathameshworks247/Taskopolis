@@ -1,7 +1,7 @@
 import firebase from 'firebase/compat/app';
 import 'firebase/firestore'
 import { initializeApp } from 'firebase/app';
-import { getAuth, GoogleAuthProvider, FacebookAuthProvider , GithubAuthProvider} from 'firebase/auth';
+import { getAuth, GoogleAuthProvider, signInWithEmailAndPassword , GithubAuthProvider} from 'firebase/auth';
 const githubProvider = new GithubAuthProvider();
 
 const firebaseConfig = {
@@ -20,7 +20,7 @@ const auth = getAuth(app);
 
 const googleProvider = new GoogleAuthProvider();
 
-export {app, auth, googleProvider, githubProvider };
+export {app, auth, googleProvider, githubProvider};
 //init services
 
 // const projectFirestore = firebase.firestore()

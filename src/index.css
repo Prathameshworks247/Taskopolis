@@ -7,18 +7,18 @@ html, body {
 
 #root {
   background-color: #FFF8F8; /* This is fine, but it's redundant if it's the same as html/body */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
 }
+
 .taskopolis-card {
   border-radius: 20px;
   width: 800px; /* Set desired width */
   max-width: 85%; /* Make it responsive */
-  margin: auto;
   background-color: #ffffff; /* Adjust to match your background */
   box-shadow: 0px 2px 4px rgb(173, 172, 172);
+  cursor: pointer;
 }
+
 .login-card{
   border-radius: 20px;
   font-family: 'Inter';
@@ -35,7 +35,7 @@ html, body {
   width: 800px;
   box-shadow: 1px 1px 1px rgb(173, 172, 172);
   perspective: 1000px; /* Provides a 3D perspective */
-  margin-bottom: 150px;
+  margin-bottom: 50px;
 }
 .building-container{
   border-radius: 20px;
@@ -121,6 +121,63 @@ html, body {
   display: flex;
   flex-direction: row;
 }
+.task-container{
+  position:relative;
+  margin-left: 400px;
+  font-family: 'Inter';
+}
+.add-task{
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+.add-task-text{
+  font-size: 30px;
+  font-weight: bolder;
+}
+.add-task:hover{
+  background-color: #F8D3D3;
+  cursor: pointer;
+}
+.sidebar {
+  width: 250px;
+  height: 100vh; /* Full height */
+  position:fixed;
+  font-size: 22px;
+  left: 0;
+  top: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 45px;
+  margin-left: 70px;
+}
+
+
+
+.sidebar ul {
+  list-style:none;
+  padding: 20px;
+}
+.sidebar ul li {
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bolder;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 5px;
+}
+.tabs {
+  padding: 10px;
+  border-radius: 15px;
+}
+.tabs:hover {
+  background: #F8D3D3;
+}
+
 .account-button {
   background-color: transparent; /* No background color */
   color: black;

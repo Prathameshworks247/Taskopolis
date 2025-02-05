@@ -33,8 +33,7 @@ function SignupCard() {
         try {
             const result = await signInWithPopup(auth, googleProvider);
             console.log("Google Sign-in Success:", result.user);
-            // Store user data or navigate
-            navigate('/home');
+            navigate('/tasks');
         } catch (error: any) {
             console.error("Google Sign-in Error:", error);
             alert(error.message);
@@ -45,8 +44,7 @@ function SignupCard() {
         try {
             const result = await signInWithPopup(auth, githubProvider);
             console.log("GitHub Sign-in Success:", result.user);
-            // Store user data or navigate
-            navigate('/home');
+            navigate('/tasks');
         } catch (error: any) {
             console.error("GitHub Sign-in Error:", error);
             alert(error.message);
@@ -67,7 +65,7 @@ function SignupCard() {
             const user = userCredential.user;
 
             console.log('User signed up:', user);
-            navigate('/home');
+            navigate('/tasks');
         } catch (e: any) {
             if (e.code === "auth/email-already-in-use") {
                 alert("This email is already registered. Please log in instead.");

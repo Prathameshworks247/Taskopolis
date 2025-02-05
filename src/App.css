@@ -1,0 +1,13 @@
+html, body {
+    background-color: #FFF8F8; /* Set background color for both html and body */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    height: 100%; /* Make sure the body takes full height of the screen */
+  }
+  
+  #root {
+    background-color: #FFF8F8; /* This is fine, but it's redundant if it's the same as html/body */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

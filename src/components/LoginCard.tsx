@@ -2,8 +2,9 @@ import React from 'react'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import checks from '../assets/patterns/checks.png'
+import {auth} from '../firebase/config'
+import {signInWithEmailAndPassword } from 'firebase/auth';
 import axios from 'axios';
-
 
 
 function LoginCard() {
@@ -17,18 +18,25 @@ function LoginCard() {
           });
     }
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        const { email, password } = formData;
+      e.preventDefault();
+      const { email, password } = formData;
+      
+      try {
+        // Use await instead of .then()
+        await signInWithEmailAndPassword(auth, email, password);
+        
+        console.log('User logged in:', {
+          email: email,
+          password: password,
+        });
+        // Navigate to the home page after successful login
+        navigate('/tasks');
+      } catch (err:any) {
+        // Handle error if login fails
+        alert(err.message);
+      }
+    };
     
-        try {
-          console.log('User logged in:', {
-            email: email,
-            password: password,
-          });
-        } catch (error) {
-          console.error('Login error:', error);
-        }
-      };
     return (
     <div className='login-card d-flex justify-content-center align-items-center p-2 row bg-white'>
         <div className='d-flex justify-content-center align-items-center  row bg-white'>
