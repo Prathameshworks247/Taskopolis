@@ -10,9 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@dnd-kit/core": "^6.3.1",
+    "@dnd-kit/sortable": "^10.0.0",
     "@google/generative-ai": "^0.21.0",
     "@react-three/drei": "^9.120.8",
     "@react-three/fiber": "^8.17.12",
+    "array-move": "^4.0.0",
     "axios": "^1.7.9",
     "boostrap": "^2.0.0",
     "bootstrap": "^5.3.3",
