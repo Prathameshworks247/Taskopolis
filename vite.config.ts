@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
   build: {
-    minify: 'esbuild', // or 'terser'
+    minify: 'terser', // or 'terser'
     sourcemap: false, // Optional
   }
 })
