@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -11,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 function Header() {
     const navigate = useNavigate()
     return(
-        <div onClick={() => navigate('/')} className="taskopolis-card d-flex justify-content-center align-items-center p-1 row bg-white">
+        <div onClick={() => navigate('/')} className="taskopolis-card d-flex justify-content-center align-items-center p-1 row ">
             <div className="col-2"><img
                 src={image}
                 alt="Taskopolis Icon"

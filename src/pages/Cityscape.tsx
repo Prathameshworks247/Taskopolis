@@ -27,7 +27,6 @@ function Cityscape() {
       <img className='add-task' src={add} style={{ width: '30px', height: '30px', marginBottom:'13px' }} alt=""/>
     </div>
     </div>
-      
     </>
   )
 }

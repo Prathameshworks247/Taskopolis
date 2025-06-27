@@ -8,7 +8,6 @@ import building5 from '../assets/buildings/b5.png';
 import sound from '../assets/sounds/hammer-impacting-nail-metallic-fascinatedsound-1-00-02_ltBE1BSF.mp3'
 import sound2 from '../assets/sounds/mixkit-falling-bricks-388_oVB7rJ5s.wav'
 import arrow from '../assets/patterns/arrow.png'
-import { div } from 'three/tsl';
 
 function Demo() {
   interface CheckedItems {
@@ -109,7 +108,7 @@ function getMessage(count: number) {
                 }}/>
       </div>
       <div className="demo-task-cards d-flex flex-column" style={{marginLeft: '30px', marginTop:'90px'}}>
-      <div className="demo-task-card d-flex justify-content-center align-items-center p-3 row bg-white">
+      <div className="demo-task-card d-flex justify-content-center align-items-center p-3 row">
         <h3 className="title mb-0 col-10">Complete Homework 📚</h3>
         <div className="col-2">
           <input
@@ -122,7 +121,7 @@ function getMessage(count: number) {
         </div>
       </div>
 
-      <div className="demo-task-card d-flex justify-content-center flex-row align-items-center p-3 row bg-white">
+      <div className="demo-task-card d-flex justify-content-center flex-row align-items-center p-3 row">
         <h3 className="title mb-0 col-10">Hit the gym 💪</h3>
         <div className="col-2">
           <input
@@ -135,7 +134,7 @@ function getMessage(count: number) {
         </div>
       </div>
 
-      <div className="demo-task-card d-flex justify-content-center align-items-center p-3 row bg-white">
+      <div className="demo-task-card d-flex justify-content-center align-items-center p-3 row">
         <h3 className="title mb-0 col-10">Water the plants 🌸</h3>
         <div className="col-2">
           <input

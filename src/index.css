@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 html, body {
   background-color: #FFF8F8; /* Set background color for both html and body */
   margin: 0; /* Remove default margin */
@@ -49,6 +52,14 @@ html, body {
 .demo-task-card{
   border-radius: 25px;
   width: 700px; /* Set desired width */
+  max-width: 70%;
+  background-color: #ffffff; /* Adjust to match your background */
+  margin-bottom: 20px;
+  box-shadow: 0px 2px 4px rgb(173, 172, 172);
+}
+.task-task-card{
+  border-radius: 25px;
+  width: 600px; /* Set desired width */
   max-width: 70%;
   background-color: #ffffff; /* Adjust to match your background */
   margin-bottom: 20px;
@@ -143,9 +154,7 @@ html, body {
   filter: blur(3px);
   transition: filter 0.3s ease-in-out;
 }
-.popup-window{
-  
-}
+
 .sidebar {
   width: 250px;
   height: 100vh; /* Full height */
@@ -209,9 +218,11 @@ html, body {
   position: relative;
   margin-left: 100px;
 }
+
 .btn {
   background-color: #000;
 }
+
 label{
   font-weight: 300;
 }
