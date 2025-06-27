@@ -125,7 +125,7 @@ function getMessage(count: number) {
         <h3 className="title mb-0 col-10">Hit the gym 💪</h3>
         <div className="col-2">
           <input
-            className="checks"
+            className="checks rounded-lg"
             type="checkbox"
             name="item2"
             checked={checkedTasks.item2}
@@ -167,39 +167,98 @@ function getMessage(count: number) {
           marginTop: '40px',
         }}
       >
-        {Object.keys(checkedTasks).map((task, index) => (
           <div
-            key={index}
-            className="building-slot"
+            className="building-slot justify-content-center align-items-center d-flex"
             style={{
-              flex:1,
               textAlign: 'center',
               padding: '10px',
             }}
           >
-            {checkedTasks[task] && (
+            {count >= 1 && (
               <div style={{
-                flex:1,
                 textAlign: 'center',
-                borderRight: '2px solid grey',
                 width: '100%',
                 height: '100%',
 
               }}>
                 <img
-                src={buildings[index]}
-                alt={`Building for ${task}`}
+                className='building-image justify-content-center align-items-center d-flex'
+                src={buildings[0]}
+                alt={`Building for ${0}`}
                 style={{
-                  objectFit: 'inherit',
-                  width: '18%',
-                  height: '18%',
+                  objectFit: "inherit",
+                  width: '50%',
+                  height: '50%',
                 }}
               />
               </div>
               
             )}
           </div>
-        ))}
+          <div
+            className="building-slot justify-content-center align-items-center d-flex"
+            style={{
+              textAlign: 'center',
+              padding: '10px',
+            }}
+          >
+            {count >= 2 && (
+              <div style={{
+                textAlign: 'center',
+                width: '100%',
+                height: '100%',
+
+              }}>
+                <img
+                className='building-image justify-content-center align-items-center d-flex'
+                src={buildings[1]}
+                alt={`Building for ${0}`}
+                style={{
+                  objectFit: "inherit",
+                  width: '50%',
+                  height: '50%',
+                }}
+              />
+              </div>
+              
+            )}
+          </div>
+          <div
+            className="building-slot justify-content-center align-items-center d-flex"
+            style={{
+              textAlign: 'center',
+              padding: '10px',
+            }}
+          >
+            {(count >= 3 && (
+              <div style={{
+                textAlign: "end",
+                width: '100%',
+                height: '100%',
+
+              }}>
+                <img
+                className='building-image justify-content-center align-items-center d-flex'
+                src={buildings[2]}
+                alt={`Building for ${0}`}
+                style={{
+                  objectFit: "contain",
+                  width: '50%',
+                  height: '50%',
+                }}
+              />
+              </div>) || 
+              <div style={{
+                textAlign: "end",
+                width: '100%',
+                height: '100%',
+
+              }}>
+
+              </div>
+              
+            )}
+          </div>
       </div>
     </div>
   );
