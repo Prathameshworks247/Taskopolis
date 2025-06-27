@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { cn } from '../lib/utils';
-import { format, startOfYear, endOfYear, eachDayOfInterval, getDay, startOfWeek, addDays, isSameDay } from 'date-fns';
+import { format, startOfYear, endOfYear, eachDayOfInterval, getDay, startOfWeek, addDays } from 'date-fns';
 
 interface StreakData {
   date: Date;

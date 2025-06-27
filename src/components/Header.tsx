@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { GoogleGenerativeAI } from "@google/generative-ai";
 import image from '../assets/icons/image.png'
 import { useNavigate } from 'react-router-dom';
 

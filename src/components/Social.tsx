@@ -1,4 +1,3 @@
-import React from 'react'
 import insta from "../assets/icons/insta.png"
 import link from "../assets/icons/link.png"
 import twit from "../assets/icons/X.png"

@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import checks from '../assets/patterns/checks.png'
 import {auth} from '../firebase/config'
 import {signInWithEmailAndPassword } from 'firebase/auth';
-import axios from 'axios';
 
 
 function LoginCard() {
