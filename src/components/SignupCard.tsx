@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 // import { getDatabase, ref, set } from 'firebase/database';
-import { app, auth, googleProvider, githubProvider } from '../firebase/config';
+import {auth, googleProvider, githubProvider } from '../firebase/config';
 import checks from '../assets/patterns/checks.png';
 import or from '../assets/icons/OrDivider.png';
 import google from '../assets/icons/Google.png';
