@@ -1,7 +1,7 @@
-import React, { useMemo } from 'react';
+import  { useMemo } from 'react';
 import StreakCalendar from "../components/StreakCalender";
 import { generateMockStreakData } from '../utils/MockData';
-import { differenceInDays, isSameDay, addDays } from 'date-fns';
+import { differenceInDays, addDays } from 'date-fns';
 
 const Index = () => {
   const streakData = useMemo(() => generateMockStreakData(), []);

@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './index.css';
-import { GoogleGenerativeAI } from "@google/generative-ai";
 import Landing from './pages/Landing';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
@@ -10,7 +8,6 @@ import Tasks from './pages/Tasks';
 import Rank from './pages/Rank';
 import Cityscape from './pages/Cityscape';
 import Streak from './pages/Streak';
-import Index from './pages/Index';
 
 
 function App() {

@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import logo from '../assets/icons/image.png'
 import streaking from '../assets/icons/trending-topic.png'
 import cityscape from '../assets/icons/cityscape.png'

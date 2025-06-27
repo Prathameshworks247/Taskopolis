@@ -18,8 +18,6 @@ import confetti from 'canvas-confetti';
 import sound from '../assets/sounds/hammer-impacting-nail-metallic-fascinatedsound-1-00-02_ltBE1BSF.mp3'
 import sound2 from '../assets/sounds/mixkit-falling-bricks-388_oVB7rJ5s.wav'
 import { useRef } from 'react'
-import { Color } from 'three/src/Three.Core.js'
-import { GoogleGenerativeAI } from "@google/generative-ai";
 
 
 

@@ -1,7 +1,4 @@
-import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { GoogleGenerativeAI } from "@google/generative-ai";
 import Header from '../components/Header';
 import Social from '../components/Social';
 import LoginCard from '../components/LoginCard';
