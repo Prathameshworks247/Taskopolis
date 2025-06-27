@@ -1,11 +1,10 @@
-import React, { useState,useMemo } from 'react'
+import { useMemo } from 'react'
 import logo from '../assets/icons/image.png'
 import streaking from '../assets/icons/trending-topic.png'
 import cityscape from '../assets/icons/cityscape.png'
 import tasks from '../assets/icons/add-post.png'
 import rank from '../assets/icons/ranking.png'
 import { useNavigate } from 'react-router-dom'
-import add from '../assets/icons/add.png'
 import { generateMockStreakData } from '../utils/MockData';
 import StreakCalendar from '../components/StreakCalender'
 function Streak() {

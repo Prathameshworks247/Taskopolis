@@ -21,12 +21,13 @@ import { useRef } from 'react'
 
 
 
+
 function Tasks() {
   const navigate = useNavigate();
   const [popup, setPopup] = useState(false);
   const [indTask, setIndTask] = useState({ description: '', tag: '', checked: false, color:''}); // Ensure indTask exists
   const [tasks, setTasks] = useState<{ description: string; tag: string; checked:boolean; color: string}[]>([]);  
-  const [building, setBuilding] = useState();
+  //const [building, setBuilding] = useState();
   
   const buildings = [
     sign,building1, building2, building3, building4, building5,building6
