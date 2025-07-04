@@ -1,25 +1,22 @@
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import image from '../assets/icons/image.png'
 import { useNavigate } from 'react-router-dom';
-
-
+import '../styles/Header.css'; // Add this import
 
 function Header() {
     const navigate = useNavigate()
     return(
-        <div onClick={() => navigate('/')} className="taskopolis-card d-flex justify-content-center align-items-center p-1 row ">
-            <div className="col-2"><img
-                src={image}
-                alt="Taskopolis Icon"
-                className="icon me-3"
-                style={{ width: '50px', height: '50px' }} /></div>
-            <div className="col-10 ">
-                <div className="flex-grow-1">
-                    <h3 className="title mb-0 ">Taskopolis</h3>
-                </div>
+        <div onClick={() => navigate('/')} className="header-container">
+            <div className="header-icon">
+                <img
+                    src={image}
+                    alt="Taskopolis Icon"
+                    className="taskopolis-icon"
+                />
             </div>
-
+            <div className="header-title">
+                <h3 className="title-text">Taskopolis</h3>
+            </div>
         </div>
     )
 }

@@ -4,10 +4,14 @@ import cityscape from '../assets/icons/cityscape.png'
 import tasks from '../assets/icons/add-post.png'
 import rank from '../assets/icons/ranking.png'
 import { useNavigate } from 'react-router-dom'
+import CityGrid from '../components/CityGrid'
+import { useCityData } from '../hooks/CityData'
 import add from '../assets/icons/add.png'
 
 
 function Cityscape() {
+  const { cityData, addTask, getTodaysTasks } = useCityData();
+  const todaysTasks = getTodaysTasks();
     const navigate = useNavigate();
   return (
     <>
@@ -21,10 +25,12 @@ function Cityscape() {
         <li><img src={streaking} style={{ width: '30px', height: '30px' }} alt="" /><div className='tabs' onClick={()=>navigate('/streak')}>Streak</div></li>
       </ul>
     </div>
-    <div className='task-container d-flex justify-content-start align-items-center gap-2' style={{marginTop: '40px'}}>
-      <p className='add-task-text'>Add Tasks</p>
-      <img className='add-task' src={add} style={{ width: '30px', height: '30px', marginBottom:'13px' }} alt=""/>
-    </div>
+    <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/20">
+          <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">
+            Your Productivity Cityscape
+          </h2>
+          <CityGrid cityData={cityData} />
+        </div>
     </div>
     </>
   )

@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import BodyText from '../components/BodyText';
 import Demo from '../components/Demo';
 import Social from '../components/Social';
-
+import Features from '../components/Features';
 function Landing() {
   const navigate = useNavigate();
 
@@ -22,12 +22,14 @@ function Landing() {
       <Header />
       </div>
 
-      <div className='d-flex  flex-wrap justify-content-center' style={{ marginBottom: '250px' }}>
-      <div className='d-flex'  style={{ marginTop: '150px'}}><BodyText handlesignup={handleSignup} handlelogin={handleLogin} /></div>
+      <div className='d-flex  flex-wrap justify-content-center'>
+      <div className='d-flex'><BodyText handlesignup={handleSignup} handlelogin={handleLogin} /></div>
       <div style={{ marginLeft: '80px'}}><Demo/></div>
       </div>
-      
-      <div className='d-flex' style={{ marginBottom: '300px' }}>
+      <div>
+      <Features/>
+      </div>
+      <div className='d-flex' style={{ marginBottom: '100px' }}>
       <Social/>
       </div>
       

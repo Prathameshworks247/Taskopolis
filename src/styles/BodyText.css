@@ -1,0 +1,209 @@
+/* BodyText.css */
+
+.bodytext-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .text-content {
+    margin-bottom: 40px;
+    width: 100%;
+  }
+  
+  .upper-text {
+    color: #009DFF;
+    font-weight: 900;
+    font-family: 'Inter';
+    margin-bottom: 5px;
+    line-height: 1.2;
+    font-size: 400%;
+  }
+  
+  .lower-text {
+    font-weight: 900;
+    font-family: 'Inter';
+    font-size: 400%;
+  }
+  
+  .tagline {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    margin-bottom: 0;
+    line-height: 1.5;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .button-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 350px;
+  }
+  
+  .gamify-button {
+    background-color: #009DFF; /* Light blue color */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px; /* Rounded corners */
+  font-size: 15px;
+  font-family: 'Inter';
+  cursor: pointer;
+  font-weight: 900;
+  }
+  
+  .gamify-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+  }
+  
+  .account-button {
+    font-weight: 900;
+    font-family: 'Inter';
+  }
+  
+
+  /* Tablet Styles (768px - 1024px) */
+  @media (max-width: 1024px) {
+    .bodytext-container {
+      max-width: 550px;
+      padding: 18px;
+    }
+    
+    .upper-text{
+      font-size: 3rem;
+    }
+    .lower-text {
+      font-size: 3rem;
+    }
+    
+    .tagline {
+      font-size: 1.1rem;
+      max-width: 450px;
+    }
+    
+    .text-content {
+      margin-bottom: 35px;
+    }
+    
+    .gamify-button {
+      padding: 14px 25px;
+      font-size: 1rem;
+    }
+    
+    .account-button {
+      padding: 11px 25px;
+      font-size: 0.95rem;
+    }
+  }
+  
+  /* Mobile Styles (up to 768px) */
+  @media (max-width: 768px) {
+    .bodytext-container {
+      max-width: 100%;
+      padding: 15px;
+    }
+    
+
+    
+    .tagline {
+      font-size: 1rem;
+      max-width: 100%;
+    }
+    
+    .text-content {
+      margin-bottom: 30px;
+    }
+    
+    .button-group {
+      max-width: 300px;
+      gap: 12px;
+    }
+    
+    .gamify-button {
+      padding: 12px 20px;
+      font-size: 0.95rem;
+    }
+    
+    .account-button {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* Small Mobile Styles (up to 480px) */
+  @media (max-width: 480px) {
+    .bodytext-container {
+      padding: 10px;
+    }
+
+    
+    .tagline {
+      font-size: 0.9rem;
+    }
+    
+    .text-content {
+      margin-bottom: 25px;
+    }
+    
+    .button-group {
+      max-width: 280px;
+      gap: 10px;
+    }
+    
+    .gamify-button {
+      padding: 10px 15px;
+      font-size: 0.85rem;
+    }
+    
+    .account-button {
+      padding: 8px 15px;
+      font-size: 0.8rem;
+    }
+  }
+  
+  /* Extra Small Mobile (up to 320px) */
+  @media (max-width: 320px) {
+    .bodytext-container {
+      padding: 8px;
+    }
+    
+    .upper-text,
+    .lower-text {
+      font-size: 1.3rem;
+    }
+    
+    .tagline {
+      font-size: 0.8rem;
+    }
+    
+    .text-content {
+      margin-bottom: 20px;
+    }
+    
+    .button-group {
+      max-width: 100%;
+      gap: 8px;
+    }
+    
+    .gamify-button {
+      padding: 8px 12px;
+      font-size: 0.75rem;
+    }
+    
+    .account-button {
+      padding: 6px 12px;
+      font-size: 0.7rem;
+    }
+  }

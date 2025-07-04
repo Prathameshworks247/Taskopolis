@@ -8,6 +8,7 @@ import building5 from '../assets/buildings/b5.png';
 import sound from '../assets/sounds/hammer-impacting-nail-metallic-fascinatedsound-1-00-02_ltBE1BSF.mp3'
 import sound2 from '../assets/sounds/mixkit-falling-bricks-388_oVB7rJ5s.wav'
 import arrow from '../assets/patterns/arrow.png'
+import '../styles/Demo.css'; // Add this import
 
 function Demo() {
   interface CheckedItems {
@@ -82,73 +83,74 @@ function Demo() {
     if (!checked){
       playUnbuild();
     }
-    
   };
 
-function getMessage(count: number) {
-  if (count <= 1) {
-    return <p className='wiggle fw-bold'>Complete your tasks!!</p>;
-  } else if (count === 2) {
-    return <p className='wiggle fw-bold ml-5'>Almost there!!</p>;
-  } else if (count === 3) {
-    return <p className='wiggle fw-bold ml-5'>Way to go!!</p>;
-  } else {
-    return null;
+  function getMessage(count: number) {
+    if (count <= 1) {
+      return <p className='wiggle fw-bold message-text'>Complete your tasks!!</p>;
+    } else if (count === 2) {
+      return <p className='wiggle fw-bold message-text'>Almost there!!</p>;
+    } else if (count === 3) {
+      return <p className='wiggle fw-bold message-text'>Way to go!!</p>;
+    } else {
+      return null;
+    }
   }
-}
+
   return (
-    <div className="d-flex flex-column justify-content-center align-items-center" style={{marginTop: '50px'}}>
-      <div className="d-flex flex-row justify-content-center align-items-center">
-      <div>
-        
-      {getMessage(count)}
-          <img  className= 'arrowimg' src={arrow} style={{
-                  width: '80px',
-                  height:'80px'
-                }}/>
-      </div>
-      <div className="demo-task-cards d-flex flex-column" style={{marginLeft: '30px', marginTop:'90px'}}>
-      <div className="demo-task-card d-flex justify-content-center align-items-center p-3 row">
-        <h3 className="title mb-0 col-10">Complete Homework 📚</h3>
-        <div className="col-2">
-          <input
-            className="checks"
-            type="checkbox"
-            name="item1"
-            checked={checkedTasks.item1}
-            onChange={handleChange}
-          />
+    <div className="demo-container">
+      <div className="demo-content flex-1 flex-row">
+        {/* Message and Arrow Section */}
+        {/* <div className="demo-task"> */}
+        <div className="message-section">
+          {getMessage(count)}
+          <img className='arrow-img' src={arrow} alt="Arrow" />
+        </div>
+
+        {/* Task Cards Section */}
+        <div className="demo-task-cards">
+          <div className="demo-task-card">
+            <h3 className="task-title">Complete Homework 📚</h3>
+            <div className="checkbox-wrapper">
+              <input
+                className="task-checkbox"
+                type="checkbox"
+                name="item1"
+                checked={checkedTasks.item1}
+                onChange={handleChange}
+              />
+            </div>
+          </div>
+
+          <div className="demo-task-card">
+            <h3 className="task-title">Hit the gym 💪</h3>
+            <div className="checkbox-wrapper">
+              <input
+                className="task-checkbox"
+                type="checkbox"
+                name="item2"
+                checked={checkedTasks.item2}
+                onChange={handleChange}
+              />
+            </div>
+          </div>
+
+          <div className="demo-task-card">
+            <h3 className="task-title">Water the plants 🌸</h3>
+            <div className="checkbox-wrapper">
+              <input
+                className="task-checkbox"
+                type="checkbox"
+                name="item3"
+                checked={checkedTasks.item3}
+                onChange={handleChange}
+              />
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="demo-task-card d-flex justify-content-center flex-row align-items-center p-3 row">
-        <h3 className="title mb-0 col-10">Hit the gym 💪</h3>
-        <div className="col-2">
-          <input
-            className="checks rounded-lg"
-            type="checkbox"
-            name="item2"
-            checked={checkedTasks.item2}
-            onChange={handleChange}
-          />
-        </div>
-      </div>
-
-      <div className="demo-task-card d-flex justify-content-center align-items-center p-3 row">
-        <h3 className="title mb-0 col-10">Water the plants 🌸</h3>
-        <div className="col-2">
-          <input
-            className="checks"
-            type="checkbox"
-            name="item3"
-            checked={checkedTasks.item3}
-            onChange={handleChange}
-          />
-        </div>
-      </div>
-      </div>
-
-      </div>
+      {/* Audio Elements */}
       <audio ref={buildRef}>
         <source src={sound} type="audio/mp3" />
         Your browser does not support the audio element.
@@ -158,107 +160,37 @@ function getMessage(count: number) {
         Your browser does not support the audio element.
       </audio>
 
-      <div
-        className="building-container d-flex justify-content-between align-items-center p-3"
-        style={{
-          borderRadius: '10px',
-          width: '100%',
-          maxWidth: '600px',
-          marginTop: '40px',
-        }}
-      >
-          <div
-            className="building-slot justify-content-center align-items-center d-flex"
-            style={{
-              textAlign: 'center',
-              padding: '10px',
-            }}
-          >
-            {count >= 1 && (
-              <div style={{
-                textAlign: 'center',
-                width: '100%',
-                height: '100%',
-
-              }}>
-                <img
-                className='building-image justify-content-center align-items-center d-flex'
-                src={buildings[0]}
-                alt={`Building for ${0}`}
-                style={{
-                  objectFit: "inherit",
-                  width: '50%',
-                  height: '50%',
-                }}
-              />
-              </div>
-              
-            )}
-          </div>
-          <div
-            className="building-slot justify-content-center align-items-center d-flex"
-            style={{
-              textAlign: 'center',
-              padding: '10px',
-            }}
-          >
-            {count >= 2 && (
-              <div style={{
-                textAlign: 'center',
-                width: '100%',
-                height: '100%',
-
-              }}>
-                <img
-                className='building-image justify-content-center align-items-center d-flex'
-                src={buildings[1]}
-                alt={`Building for ${0}`}
-                style={{
-                  objectFit: "inherit",
-                  width: '50%',
-                  height: '50%',
-                }}
-              />
-              </div>
-              
-            )}
-          </div>
-          <div
-            className="building-slot justify-content-center align-items-center d-flex"
-            style={{
-              textAlign: 'center',
-              padding: '10px',
-            }}
-          >
-            {(count >= 3 && (
-              <div style={{
-                textAlign: "end",
-                width: '100%',
-                height: '100%',
-
-              }}>
-                <img
-                className='building-image justify-content-center align-items-center d-flex'
-                src={buildings[2]}
-                alt={`Building for ${0}`}
-                style={{
-                  objectFit: "contain",
-                  width: '50%',
-                  height: '50%',
-                }}
-              />
-              </div>) || 
-              <div style={{
-                textAlign: "end",
-                width: '100%',
-                height: '100%',
-
-              }}>
-
-              </div>
-              
-            )}
-          </div>
+      {/* Buildings Section */}
+      <div className="building-container">
+        <div className="building-slot">
+          {count >= 1 && (
+            <img
+              className='building-image-1'
+              src={buildings[0]}
+              alt="Building 1"
+            />
+          )}
+        </div>
+        
+        <div className="building-slot">
+          {count >= 2 && (
+            <img
+              className='building-image-2'
+              src={buildings[1]}
+              alt="Building 2"
+            />
+          )}
+        </div>
+        
+        <div className="building-slot">
+          {count >= 3 && (
+            <img
+              className='building-image-3'
+              src={buildings[2]}
+              alt="Building 3"
+            />
+          )}
+        </div>
       </div>
     </div>
   );

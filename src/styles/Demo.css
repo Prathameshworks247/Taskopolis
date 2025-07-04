@@ -1,0 +1,245 @@
+/* Demo.css */
+
+.demo-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .demo-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 40px;
+    gap: 30px;
+  }
+  
+  .message-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-width: 120px;
+  }
+  
+  .message-text {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+  
+  .arrow-img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+  }
+  
+  .demo-task-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex: 1;
+    max-width: 600px;
+  }
+  
+  .demo-task-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 25px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .demo-task-card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  }
+  
+  .task-title {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 1000;
+    padding: 5px;
+    flex: 1;
+  }
+  
+  .checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+  }
+  
+  .task-checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+  .building-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 80%;
+    background-color: #f8f9fa;
+    border: 2px solid #e9ecef;
+    margin-right: 100px;
+  }
+  
+  .building-slot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    height: 120px;
+    padding: 10px;
+  }
+  
+  .building-image-1 {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  .building-image-2 {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  .building-image-3 {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  
+  .building-image:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Tablet Styles (768px - 1024px) */
+  @media (max-width: 1024px) {
+    .demo-container {
+      padding: 15px;
+    }
+    
+    .demo-content {
+      gap: 20px;
+    }
+    
+    .arrow-img {
+      width: 50px;
+      height: 50px;
+    }
+    
+    .task-title {
+      font-size: 1rem;
+    }
+    
+    .building-slot {
+      height: 100px;
+    }
+  }
+  
+  /* Mobile Styles (up to 768px) */
+  @media (max-width: 768px) {
+    .demo-container {
+      padding: 10px;
+    }
+    
+    .demo-content {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .message-section {
+      order: -1;
+      margin-bottom: 10px;
+    }
+    
+    .message-text {
+      font-size: 0.9rem;
+    }
+    
+    .arrow-img {
+      width: 40px;
+      height: 40px;
+    }
+    
+    .demo-task-cards {
+      width: 100%;
+      max-width: 50%;
+    }
+    
+    .demo-task-card {
+      padding: 25px 25px;
+    }
+    
+    .task-title {
+      font-size: 0.95rem;
+    }
+    
+    .building-container {
+      flex-direction: row;
+
+      width: 50%;
+    }
+    
+    .building-slot {
+      height: 80px;
+      width: 100%;
+    }
+  }
+  
+  /* Small Mobile Styles (up to 480px) */
+  @media (max-width: 480px) {
+    .demo-container {
+      padding: 5px;
+    }
+    
+    .message-text {
+      font-size: 0.8rem;
+    }
+    
+    .arrow-img {
+      width: 35px;
+      height: 35px;
+    }
+    
+    .demo-task-card {
+      padding: 20px 22px;
+    }
+    
+    .task-title {
+      font-size: 0.85rem;
+    }
+    
+    .task-checkbox {
+      width: 18px;
+      height: 18px;
+    }
+    
+    .building-container {
+      padding: 10px;
+      width: 50%;
+    }
+    
+    .building-slot {
+      height: 60px;
+    }
+  }

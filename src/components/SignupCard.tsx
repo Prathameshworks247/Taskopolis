@@ -77,15 +77,15 @@ function SignupCard() {
     };
 
     return (
-        <div className='signup-card d-flex justify-content-center align-items-center p-2 row bg-white'>
-            <div className='d-flex justify-content-center align-items-center row bg-white'>
+        <div className='signup-card  justify-center align-middle p-2 flex-column bg-white'>
+            <div className='flex justify-center align-middle row'>
                 <img className="checks-image" src={checks} alt="login design" style={{ width: '500px' }} />
                 <h2 className='title-login d-flex justify-content-center align-items-center' style={{ marginTop: '40px' }}>
                     Create Account
                 </h2>
             </div>
 
-            <div className="form-container-login col-md-7">
+            <div className="form-container-login w-2/3 flex-row justify-center align-middle">
                 <button onClick={handleGoogleSignIn} className="bg-white rounded d-flex justify-content-center align-items-center text-black font-family-inter w-100 mb-4 fw-bold border">
                     <img className='col-1' style={{ transform: 'scale(0.6)' }} src={google} alt="Google" />
                     <div className='col-11'>Sign up with Google</div>

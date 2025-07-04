@@ -38,7 +38,7 @@ function Streak() {
   </div>
    
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center align-middle">
           <StreakCalendar data={streakData} />
       </div>
         

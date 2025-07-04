@@ -1,0 +1,133 @@
+/* Header.css */
+
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 100px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .header-container:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+  }
+  
+  .header-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    
+  }
+  
+  .taskopolis-icon {
+    width: 50px;
+    height: 50px;
+    object-fit:contain;
+  }
+  
+  .header-title {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+  
+  .title-text {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #333;
+    text-align: left;
+  }
+  
+  /* Tablet Styles (768px - 1024px) */
+  @media (max-width: 1024px) {
+    .header-container {
+      padding: 12px 18px;
+      max-width: 350px;
+    }
+    
+    .taskopolis-icon {
+      width: 45px;
+      height: 45px;
+    }
+    
+    .title-text {
+      font-size: 1.6rem;
+    }
+    
+    .header-icon {
+      margin-right: 12px;
+    }
+  }
+  
+  /* Mobile Styles (up to 768px) */
+  @media (max-width: 768px) {
+    .header-container {
+      padding: 10px 15px;
+      max-width: 300px;
+    }
+    
+    .taskopolis-icon {
+      width: 40px;
+      height: 40px;
+    }
+    
+    .title-text {
+      font-size: 1.4rem;
+    }
+    
+    .header-icon {
+      margin-right: 10px;
+    }
+  }
+  
+  /* Small Mobile Styles (up to 480px) */
+  @media (max-width: 480px) {
+    .header-container {
+      padding: 8px 12px;
+      max-width: 250px;
+    }
+    
+    .taskopolis-icon {
+      width: 35px;
+      height: 35px;
+    }
+    
+    .title-text {
+      font-size: 1.2rem;
+    }
+    
+    .header-icon {
+      margin-right: 8px;
+    }
+  }
+  
+  /* Extra Small Mobile (up to 320px) */
+  @media (max-width: 320px) {
+    .header-container {
+      padding: 6px 10px;
+      max-width: 200px;
+    }
+    
+    .taskopolis-icon {
+      width: 30px;
+      height: 30px;
+    }
+    
+    .title-text {
+      font-size: 1rem;
+    }
+    
+    .header-icon {
+      margin-right: 6px;
+    }
+  }
