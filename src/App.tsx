@@ -1,29 +1,35 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './index.css';
-import Landing from './pages/Landing';
-import Signup from './pages/Signup';
-import Login from './pages/Login';
-import Tasks from './pages/Tasks';
-import Rank from './pages/Rank';
-import Cityscape from './pages/Cityscape';
-import Streak from './pages/Streak';
+import { Toaster } from "./components/ui/toaster";
+import { Toaster as Sonner } from "./components/ui/sonner";
+import { TooltipProvider } from "./components/ui/tooltip";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Tasks from "./pages/Tasks";
+import Rank from "./pages/Rank";
+import Landing from "./pages/Landing";
+import Cityscape from "./pages/Cityscape";
+import Streak from "./pages/Streak";
 
+const queryClient = new QueryClient();
 
-function App() {
-    return (
-      <Router>
-      <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/tasks" element={<Tasks />} />
-        <Route path="/streak" element={<Streak />} />
-        <Route path="/cityscape" element={<Cityscape />} />
-        <Route path="/rank" element={<Rank />} />
-      </Routes>
-    </Router>
-    );
-}
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
+        <main className="flex-1">
+          <Routes>
+            <Route path="/" element={<Landing />} />
+            <Route path="/tasks" element={<Tasks />} />
+            <Route path="/rank" element={<Rank />} />
+            <Route path="/cityscape" element={<Cityscape />} />
+            <Route path="/streak" element={<Streak />} />
+          </Routes>
+        </main>
+      </BrowserRouter>
+    </TooltipProvider>
+  </QueryClientProvider>
+);
 
 export default App;
+

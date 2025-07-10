@@ -3,231 +3,109 @@
 @tailwind utilities;
 
 
-html, body {
-  background-color: #FFF8F8; /* Set background color for both html and body */
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
-  height: 100%; /* Make sure the body takes full height of the screen */
-}
+@layer base {
+  :root {
+    --background: 220 15% 97%;
+    --foreground: 220 30% 15%;
 
-#root {
-  background-color: #FFF8F8; /* This is fine, but it's redundant if it's the same as html/body */
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 15%;
 
-}
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 15%;
 
-.taskopolis-card {
-  border-radius: 20px;
-  width: 800px; /* Set desired width */
-  max-width: 85%; /* Make it responsive */
-  background-color: #ffffff; /* Adjust to match your background */
-  box-shadow: 0px 2px 4px rgb(173, 172, 172);
-  cursor: pointer;
-}
+    --primary: 220 60% 25%;
+    --primary-foreground: 0 0% 98%;
 
-.login-card{
-  border-radius: 20px;
-  font-family: 'Inter';
-  font-weight: 900;
-  width: 100%;
-  box-shadow: 1px 1px 1px rgb(173, 172, 172);
-  perspective: 1000px; /* Provides a 3D perspective */
-  margin-bottom: 170px;
-}
-.signup-card{
-  border-radius: 20px;
-  font-family: 'Inter';
-  font-weight: 900;
-  width: 900px;
-  max-width: 85%; /* Make it responsive */
-  box-shadow: 1px 1px 1px rgb(173, 172, 172);
-  perspective: 1000px; /* Provides a 3D perspective */
-  margin-bottom: 50px;
-}
-.building-container{
-  border-radius: 20px;
-  width: 800px; /* Set desired width */
-  max-width: 85%; /* Make it responsive */
-  height: 100px;
-  margin:0%;
-  background-color: #ffffff; /* Adjust to match your background */
-  box-shadow: 0px 2px 4px rgb(173, 172, 172);
-}
-.demo-task-card{
-  border-radius: 25px;
-  width: 700px; /* Set desired width */
-  max-width: 70%;
-  background-color: #ffffff; /* Adjust to match your background */
-  margin-bottom: 20px;
-  box-shadow: 0px 2px 4px rgb(173, 172, 172);
-}
-.task-task-card{
-  border-radius: 25px;
-  width: 600px; /* Set desired width */
-  max-width: 70%;
-  background-color: #ffffff; /* Adjust to match your background */
-  margin-bottom: 20px;
-  box-shadow: 0px 2px 4px rgb(173, 172, 172);
-}
+    --secondary: 220 15% 92%;
+    --secondary-foreground: 220 30% 20%;
 
-@keyframes wiggle {
-  0%, 100% {
-    transform: rotate(-3deg);
+    --muted: 220 15% 94%;
+    --muted-foreground: 220 20% 50%;
+
+    --accent: 45 95% 60%;
+    --accent-foreground: 220 30% 15%;
+
+    --success: 145 65% 45%;
+    --success-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
+    --ring: 220 60% 25%;
+
+    /* Task ranks colors */
+    --citizen: 200 50% 60%;
+    --community-leader: 160 50% 50%;
+    --council-member: 220 60% 45%;
+    --deputy-mayor: 280 60% 55%;
+    --mayor: 45 95% 50%;
+
+    /* Gradients */
+    --gradient-task: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-rank: linear-gradient(90deg, hsl(var(--primary) / 0.1), hsl(var(--accent) / 0.1));
+    --gradient-progress: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)));
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
-  50% {
-    transform: rotate(3deg);
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
-.wiggle {
-  animation: wiggle 0.5s ease-in-out infinite;
-}
-.checks {
-  width: 40px;
-  height: 40px;
-  border: 2px solid #4B5563; /* Slate Gray */
-  border-radius: 200px;
-  background-color: #f9fafb; /* Very light gray */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
-}
-
-.checks:hover {
-  background-color: #e5e7eb; /* Hover Gray */
-  border-color: #3b82f6;     /* Blue border on hover */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transform: scale(1.05);
-}
-
-.checks:active {
-  transform: scale(0.95);
-}
-
-.title-login{
-  position: absolute;
-  padding-left: 120px;
-  font-family: 'Inter';
-  font-weight: 800;
-}
-
-.tagline{
-  font-weight: 900;
-  font-family: 'Inter';
-  font-size: 20px;
-}
-.gamify-button {
-  background-color: #009DFF; /* Light blue color */
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 25px; /* Rounded corners */
-  font-size: 15px;
-  font-family: 'Inter';
-  cursor: pointer;
-  font-weight: 900;
-}
-.social-icon{
-  max-height: 80%;
-  width: 10px;
-}
-.social-signup{
-  display: flex;
-  flex-direction: row;
-}
-.task-container{
-  position:relative;
-  margin-left: 400px;
-  font-family: 'Inter';
-}
-.add-task{
-  padding: 10px;
-  border-radius: 10px;
-  margin-bottom: 5px;
-}
-.add-task-text{
-  font-size: 30px;
-  font-weight: bolder;
-}
-.add-task:hover{
-  background-color: #F8D3D3;
-  cursor: pointer;
-}
-.blur-background {
-  filter: blur(3px);
-  transition: filter 0.3s ease-in-out;
-}
-
-.sidebar {
-  width: 250px;
-  height: 100vh; /* Full height */
-  position:fixed;
-  font-size: 22px;
-  left: 0;
-  top: 0;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  padding: 45px;
-  margin-left: 70px;
-}
-
-
-
-.sidebar ul {
-  list-style:none;
-  padding: 20px;
-}
-.sidebar ul li {
-  padding: 10px;
-  cursor: pointer;
-  font-weight: bolder;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  align-items: center;
-  gap: 5px;
-}
-.tabs {
-  padding: 10px;
-  border-radius: 15px;
-}
-.tabs:hover {
-  background: #F8D3D3;
-}
-
-.account-button {
-  background-color: transparent; /* No background color */
-  color: black;
-  padding: 0;
-  font-weight: 900;
-  border: none;
-  font-size: 12px;
-
-  font-family: 'Inter';
-  text-decoration: none;
-  cursor: pointer;
-}
-.buttons{
-  width: 35%;
-}
-.checks-image{
-  position: relative;
-}
-.arrowimg{
-  mix-blend-mode:color-burn;
-  color: #000;
-  position: relative;
-  margin-left: 100px;
-}
-
-.btn {
-  background-color: #000;
-}
-
-label{
-  font-weight: 300;
-}

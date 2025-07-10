@@ -101,7 +101,7 @@ const StreakCalendar: React.FC<StreakCalendarProps> = ({
   const dayLabels = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
   return (
-    <div className="relative p-6 bg-white rounded-lg shadow-lg">
+    <div className="flex w-10/12 flex-col justify-center align-middle relative m-8 p-6 bg-white rounded-lg border-spacing-2 shadow-sm">
       <div className="mb-4">
         <h2 className="text-2xl font-bold text-gray-900 mb-2">
           {year} Activity Calendar
