@@ -36,18 +36,17 @@ export function AppSidebar() {
 
   return (
     <Sidebar
-      className={`${collapsed ? "w-32" : "w-64"} border-r border-border/50 bg-gradient-to-b from-background to-muted/20 transition-all duration-300`}
+      className={`${collapsed ? "w-10" : "w-64"} dark:bg-oxford_blue-400 dark:border-oxford_blue-400 bg-gradient-to-b from-background to-muted/20 transition-all duration-300`}
       collapsible="icon"
     >
       <SidebarContent className="p-2">
-        <div className="mb-6 px-4 py-3">
+        <div className=" flex align-middle justify-center mb-6 px-2 py-2">
         {!collapsed && (
-            <img
-                src={image}
-                alt="Taskopolis Logo"
-                className="h-14 w-auto mx-auto"
-                onClick={()=>{navigator("/")}}
-            />
+            <><img
+              src={image}
+              alt="Taskopolis Logo"
+              className="flex h-12 w-auto mx-auto"
+              onClick={() => { navigator("/") } } /><h1 className="flex mt-2 align-middle text-2xl font-semibold text-white">Taskopolis</h1></>
             )}
 
           {collapsed && (
@@ -79,9 +78,11 @@ export function AppSidebar() {
                         ${collapsed ? 'justify-center' : ''}
                         ${getNavCls({ isActive })}
                       `}>
-                      <item.icon className={`${collapsed ? 'h-10 w-10 ' : 'h-10 w-10'}  flex-shrink`} />
+                      <item.icon className={`${collapsed ? 'h-10 w-10 ' : 'h-20 w-20'}  flex-shrink dark:invert`} />
                       {!collapsed && (
-                        <span className="font-bold text-black hover:bg-slate-300 rounded-md p-1">{item.title}</span>
+                          <span className="inline-block font-bold text-lg dark:text-mikado_yellow-300  dark:hover:text-mikado_yellow-500  py-4 px-3 transition-all">
+                          {item.title}
+                        </span>
                       )}
                     </NavLink>
                   </SidebarMenuButton>
@@ -92,7 +93,7 @@ export function AppSidebar() {
         </SidebarGroup>
 
         {!collapsed && (
-          <div className="mt-auto p-4 bg-gradient-to-r from-primary/10 to-accent/10 rounded-lg border border-primary/20">
+          <div className="mt-auto p-4 bg-gradient-to-r from-primary/10 to-accent/10 rounded-lg dark:bg-yale_blue-500 border-primary/20">
             <div className="text-center">
               <div className="text-sm text-muted-foreground mb-1">Daily Progress</div>
               <div className="w-full bg-muted rounded-full h-2 mb-2">

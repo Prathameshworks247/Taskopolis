@@ -8,28 +8,32 @@ import Rank from "./pages/Rank";
 import Landing from "./pages/Landing";
 import Cityscape from "./pages/Cityscape";
 import Streak from "./pages/Streak";
+import { useTheme } from "./hooks/useTheme";
+import './App.css';
+
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <main className="flex-1">
-          <Routes>
-            <Route path="/" element={<Landing />} />
-            <Route path="/tasks" element={<Tasks />} />
-            <Route path="/rank" element={<Rank />} />
-            <Route path="/cityscape" element={<Cityscape />} />
-            <Route path="/streak" element={<Streak />} />
-          </Routes>
-        </main>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+export default function App() {
+  useTheme(); // ← Apply dark mode at the top level
 
-export default App;
-
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <main className="flex-1">
+            <Routes>
+              <Route path="/" element={<Landing />} />
+              <Route path="/tasks" element={<Tasks />} />
+              <Route path="/rank" element={<Rank />} />
+              <Route path="/cityscape" element={<Cityscape />} />
+              <Route path="/streak" element={<Streak />} />
+            </Routes>
+          </main>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+}

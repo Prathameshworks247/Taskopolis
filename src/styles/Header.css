@@ -1,133 +1,106 @@
 /* Header.css */
 
+/* styles.css or styles.module.css */
 .header-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 15px 100px;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    max-width: 400px;
-    width: 100%;
-    margin: 0 auto;
-  }
+  @apply flex justify-center items-center px-[100px] py-[15px] rounded-[10px] shadow-md cursor-pointer transition-all duration-300 ease-in-out max-w-[400px] w-full mx-auto bg-white text-white dark:bg-oxford_blue-500 dark:text-mikado_yellow-400;
+}
+
   
-  .header-container:hover {
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    transform: translateY(-2px);
+
+.header-container:hover {
+  @apply shadow-[0_4px_12px_rgba(0,0,0,0.15)] -translate-y-[2px];
+}
+
+.header-icon {
+  @apply flex items-center justify-center mr-[15px];
+}
+
+.taskopolis-icon {
+  @apply w-[50px] h-[50px] object-contain;
+}
+
+.header-title {
+  @apply flex items-center flex-1;
+}
+
+.title-text {
+  @apply m-0 text-[1.8rem] font-bold text-left;
+}
+
+/* Responsive Styles */
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .header-container {
+    @apply px-[18px] py-[12px] max-w-[350px];
   }
-  
-  .header-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 15px;
-    
-  }
-  
+
   .taskopolis-icon {
-    width: 50px;
-    height: 50px;
-    object-fit:contain;
+    @apply w-[45px] h-[45px];
   }
-  
-  .header-title {
-    flex: 1;
-    display: flex;
-    align-items: center;
-  }
-  
+
   .title-text {
-    margin: 0;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #333;
-    text-align: left;
+    @apply text-[1.6rem];
   }
-  
-  /* Tablet Styles (768px - 1024px) */
-  @media (max-width: 1024px) {
-    .header-container {
-      padding: 12px 18px;
-      max-width: 350px;
-    }
-    
-    .taskopolis-icon {
-      width: 45px;
-      height: 45px;
-    }
-    
-    .title-text {
-      font-size: 1.6rem;
-    }
-    
-    .header-icon {
-      margin-right: 12px;
-    }
+
+  .header-icon {
+    @apply mr-[12px];
   }
-  
-  /* Mobile Styles (up to 768px) */
-  @media (max-width: 768px) {
-    .header-container {
-      padding: 10px 15px;
-      max-width: 300px;
-    }
-    
-    .taskopolis-icon {
-      width: 40px;
-      height: 40px;
-    }
-    
-    .title-text {
-      font-size: 1.4rem;
-    }
-    
-    .header-icon {
-      margin-right: 10px;
-    }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .header-container {
+    @apply px-[15px] py-[10px] max-w-[300px];
   }
-  
-  /* Small Mobile Styles (up to 480px) */
-  @media (max-width: 480px) {
-    .header-container {
-      padding: 8px 12px;
-      max-width: 250px;
-    }
-    
-    .taskopolis-icon {
-      width: 35px;
-      height: 35px;
-    }
-    
-    .title-text {
-      font-size: 1.2rem;
-    }
-    
-    .header-icon {
-      margin-right: 8px;
-    }
+
+  .taskopolis-icon {
+    @apply w-[40px] h-[40px];
   }
-  
-  /* Extra Small Mobile (up to 320px) */
-  @media (max-width: 320px) {
-    .header-container {
-      padding: 6px 10px;
-      max-width: 200px;
-    }
-    
-    .taskopolis-icon {
-      width: 30px;
-      height: 30px;
-    }
-    
-    .title-text {
-      font-size: 1rem;
-    }
-    
-    .header-icon {
-      margin-right: 6px;
-    }
+
+  .title-text {
+    @apply text-[1.4rem];
   }
+
+  .header-icon {
+    @apply mr-[10px];
+  }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .header-container {
+    @apply px-[12px] py-[8px] max-w-[250px];
+  }
+
+  .taskopolis-icon {
+    @apply w-[35px] h-[35px];
+  }
+
+  .title-text {
+    @apply text-[1.2rem];
+  }
+
+  .header-icon {
+    @apply mr-[8px];
+  }
+}
+
+/* Extra Small Mobile (max-width: 320px) */
+@media (max-width: 320px) {
+  .header-container {
+    @apply px-[10px] py-[6px] max-w-[200px];
+  }
+
+  .taskopolis-icon {
+    @apply w-[30px] h-[30px];
+  }
+
+  .title-text {
+    @apply text-[1rem];
+  }
+
+  .header-icon {
+    @apply mr-[6px];
+  }
+}

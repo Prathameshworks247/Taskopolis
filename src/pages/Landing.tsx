@@ -22,9 +22,9 @@ function Landing() {
       <Header />
       </div>
 
-      <div className='d-flex  flex-wrap justify-content-center'>
+      <div className='d-flex gap-20 flex-wrap justify-content-center'>
       <div className='d-flex'><BodyText handlesignup={handleSignup} handlelogin={handleLogin} /></div>
-      <div style={{ marginLeft: '80px'}}><Demo/></div>
+      <div ><Demo/></div>
       </div>
       <div>
       <Features/>

@@ -1,14 +1,14 @@
-import React, { useState, useRef } from 'react';
-import confetti from 'canvas-confetti';
-import building1 from '../assets/buildings/b1.png';
-import building2 from '../assets/buildings/b2.png';
-import building3 from '../assets/buildings/b3.png';
-import building4 from '../assets/buildings/b4.png';
-import building5 from '../assets/buildings/b5.png';
-import sound from '../assets/sounds/hammer-impacting-nail-metallic-fascinatedsound-1-00-02_ltBE1BSF.mp3'
-import sound2 from '../assets/sounds/mixkit-falling-bricks-388_oVB7rJ5s.wav'
-import arrow from '../assets/patterns/arrow.png'
-import '../styles/Demo.css'; // Add this import
+import React, { useState, useRef } from "react";
+import confetti from "canvas-confetti";
+import building1 from "../assets/buildings/b1.png";
+import building2 from "../assets/buildings/b2.png";
+import building3 from "../assets/buildings/b3.png";
+import building4 from "../assets/buildings/b4.png";
+import building5 from "../assets/buildings/b5.png";
+import sound from "../assets/sounds/hammer-impacting-nail-metallic-fascinatedsound-1-00-02_ltBE1BSF.mp3";
+import sound2 from "../assets/sounds/mixkit-falling-bricks-388_oVB7rJ5s.wav";
+import arrow from "../assets/patterns/arrow.png";
+import "../styles/Demo.css"; // Add this import
 
 function Demo() {
   interface CheckedItems {
@@ -16,9 +16,9 @@ function Demo() {
   }
 
   const [checkedTasks, setCheckedTasks] = useState<CheckedItems>({
-    'item1': false,
-    'item2': false,
-    'item3': false
+    item1: false,
+    item2: false,
+    item3: false,
   });
 
   const buildRef = useRef<HTMLAudioElement>(null);
@@ -37,9 +37,7 @@ function Demo() {
 
   const [count, setCount] = useState(0);
 
-  const buildings = [
-    building1, building2, building3, building4, building5
-  ];
+  const buildings = [building1, building2, building3, building4, building5];
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, checked } = event.target;
@@ -61,7 +59,7 @@ function Demo() {
           break;
         case "item2":
           confetti({
-            particleCount: 150,
+            particleCount: 1000,
             spread: 70,
             origin: { x: 0.78, y: 0.46 },
           });
@@ -70,28 +68,38 @@ function Demo() {
           confetti({
             particleCount: 200,
             spread: 70,
-            origin: { x: 0.78, y: 0.56},
+            origin: { x: 0.78, y: 0.56 },
           });
           break;
         default:
           break;
       }
     }
-    if (checked){
+    if (checked) {
       playBuild();
     }
-    if (!checked){
+    if (!checked) {
       playUnbuild();
     }
   };
 
   function getMessage(count: number) {
     if (count <= 1) {
-      return <p className='wiggle fw-bold message-text'>Complete your tasks!!</p>;
+      return (
+        <div className="m-0">
+            <p className="wiggle-text fw-bold message-text">Complete your tasks!!</p>
+        </div>
+      );
     } else if (count === 2) {
-      return <p className='wiggle fw-bold message-text'>Almost there!!</p>;
+      return (
+        <div className="">
+          <p className="wiggle-text fw-bold message-text">You are almost there!!</p>
+        </div>
+      );
     } else if (count === 3) {
-      return <p className='wiggle fw-bold message-text'>Way to go!!</p>;
+      return (<div className="">
+        <p className="wiggle-text fw-bold message-text"> Vamos!!!!  Way to go!!!</p>
+      </div>);
     } else {
       return null;
     }
@@ -104,7 +112,7 @@ function Demo() {
         {/* <div className="demo-task"> */}
         <div className="message-section">
           {getMessage(count)}
-          <img className='arrow-img' src={arrow} alt="Arrow" />
+          <img className="arrow-img dark:invert dark: brightness-200" src={arrow} alt="Arrow" />
         </div>
 
         {/* Task Cards Section */}
@@ -135,8 +143,8 @@ function Demo() {
             </div>
           </div>
 
-          <div className="demo-task-card">
-            <h3 className="task-title">Water the plants 🌸</h3>
+          <div className="demo-task-card bg-saffron-400">
+            <h3 className="task-title text-burnt_sienna-700">Water the plants 🌸</h3>
             <div className="checkbox-wrapper">
               <input
                 className="task-checkbox"
@@ -165,27 +173,27 @@ function Demo() {
         <div className="building-slot">
           {count >= 1 && (
             <img
-              className='building-image-1'
+              className="building-image-1"
               src={buildings[0]}
               alt="Building 1"
             />
           )}
         </div>
-        
+
         <div className="building-slot">
           {count >= 2 && (
             <img
-              className='building-image-2'
+              className="building-image-2"
               src={buildings[1]}
               alt="Building 2"
             />
           )}
         </div>
-        
+
         <div className="building-slot">
           {count >= 3 && (
             <img
-              className='building-image-3'
+              className="building-image-3"
               src={buildings[2]}
               alt="Building 3"
             />

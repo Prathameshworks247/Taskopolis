@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../co
 import { Badge } from "../components/ui/badge";
 import { Progress } from "../components/ui/progress";
 import { Trophy, Medal, Shield, Crown, Star, Zap } from "lucide-react";
+import DarkModeToggle from '../components/DarkModeToggle';
 
 // Mock data - in a real app this would come from an API
 const userData = {
@@ -53,13 +54,12 @@ const Rank = () => {
         <div className="flex min-h-screen w-full">
           <AppSidebar />
           <div className="flex-1 flex flex-col">
-            <header className="h-12 flex items-center border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-              <SidebarTrigger className="ml-4" />
-              <div className="ml-4">
-                <h1 className="font-semibold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                  Taskopolis
-                </h1>
+          <header className="h-12 flex items-center  backdrop-blur supports-[backdrop-filter]:bg-background/60">
+          <SidebarTrigger className="text-white hover:bg-oxford_blue-500 ml-4" />
+          <div className="ml-4">
+                <h1 className="text-2xl font-semibold text-white">Rank</h1>
               </div>
+              <div className="flex absolute right-9"><DarkModeToggle/></div>
             </header>
             <div className="min-h-screen bg-background p-6 animate-fade-in">
       <div className="max-w-4xl mx-auto space-y-6">

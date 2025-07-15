@@ -1,209 +1,147 @@
-/* BodyText.css */
+/* BodyText.module.css */
 
 .bodytext-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 800px;
-    padding: 20px;
-    text-align: center;
+  @apply flex flex-col justify-center items-center w-full max-w-[800px] p-5 text-center;
+}
+
+.text-content {
+  @apply w-full mb-10;
+}
+
+.upper-text {
+  @apply text-[400%] font-black mb-[5px] leading-[1.2] font-['Inter'] text-[#009DFF] dark:text-mikado_yellow-400;
+}
+
+.lower-text {
+  @apply text-[400%] font-black font-['Inter'] dark:text-oxford_blue-600;
+}
+
+.tagline {
+  @apply text-[1.2rem] text-gray-500 leading-[1.5] mb-0 max-w-[500px] mx-auto;
+}
+
+.button-group {
+  @apply flex flex-col justify-center items-center gap-[15px] w-full max-w-[350px];
+}
+
+.gamify-button {
+  @apply bg-[#009DFF] dark:bg-yale_blue-500 dark:hover:bg-yale_blue-600 text-white py-[10px] px-[20px] rounded-full text-[15px] font-['Inter'] font-black border-none cursor-pointer;
+}
+
+.account-button {
+  @apply font-black font-['Inter']  text-gray-500 dark:hover:text-gray-300;
+}
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .bodytext-container {
+    @apply max-w-[550px] p-[18px];
   }
-  
-  .text-content {
-    margin-bottom: 40px;
-    width: 100%;
-  }
-  
-  .upper-text {
-    color: #009DFF;
-    font-weight: 900;
-    font-family: 'Inter';
-    margin-bottom: 5px;
-    line-height: 1.2;
-    font-size: 400%;
-  }
-  
+
+  .upper-text,
   .lower-text {
-    font-weight: 900;
-    font-family: 'Inter';
-    font-size: 400%;
+    @apply text-[3rem];
   }
-  
+
   .tagline {
-    font-size: 1.2rem;
-    color: #7f8c8d;
-    margin-bottom: 0;
-    line-height: 1.5;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
+    @apply text-[1.1rem] max-w-[450px];
   }
-  
-  .button-group {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    width: 100%;
-    max-width: 350px;
+
+  .text-content {
+    @apply mb-[35px];
   }
-  
+
   .gamify-button {
-    background-color: #009DFF; /* Light blue color */
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 25px; /* Rounded corners */
-  font-size: 15px;
-  font-family: 'Inter';
-  cursor: pointer;
-  font-weight: 900;
+    @apply py-[14px] px-[25px] text-[1rem];
   }
-  
-  .gamify-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
-  }
-  
+
   .account-button {
-    font-weight: 900;
-    font-family: 'Inter';
+    @apply py-[11px] px-[25px] text-[0.95rem];
   }
-  
+}
 
-  /* Tablet Styles (768px - 1024px) */
-  @media (max-width: 1024px) {
-    .bodytext-container {
-      max-width: 550px;
-      padding: 18px;
-    }
-    
-    .upper-text{
-      font-size: 3rem;
-    }
-    .lower-text {
-      font-size: 3rem;
-    }
-    
-    .tagline {
-      font-size: 1.1rem;
-      max-width: 450px;
-    }
-    
-    .text-content {
-      margin-bottom: 35px;
-    }
-    
-    .gamify-button {
-      padding: 14px 25px;
-      font-size: 1rem;
-    }
-    
-    .account-button {
-      padding: 11px 25px;
-      font-size: 0.95rem;
-    }
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .bodytext-container {
+    @apply max-w-full p-[15px];
   }
-  
-  /* Mobile Styles (up to 768px) */
-  @media (max-width: 768px) {
-    .bodytext-container {
-      max-width: 100%;
-      padding: 15px;
-    }
-    
 
-    
-    .tagline {
-      font-size: 1rem;
-      max-width: 100%;
-    }
-    
-    .text-content {
-      margin-bottom: 30px;
-    }
-    
-    .button-group {
-      max-width: 300px;
-      gap: 12px;
-    }
-    
-    .gamify-button {
-      padding: 12px 20px;
-      font-size: 0.95rem;
-    }
-    
-    .account-button {
-      padding: 10px 20px;
-      font-size: 0.9rem;
-    }
+  .tagline {
+    @apply text-[1rem] max-w-full;
   }
-  
-  /* Small Mobile Styles (up to 480px) */
-  @media (max-width: 480px) {
-    .bodytext-container {
-      padding: 10px;
-    }
 
-    
-    .tagline {
-      font-size: 0.9rem;
-    }
-    
-    .text-content {
-      margin-bottom: 25px;
-    }
-    
-    .button-group {
-      max-width: 280px;
-      gap: 10px;
-    }
-    
-    .gamify-button {
-      padding: 10px 15px;
-      font-size: 0.85rem;
-    }
-    
-    .account-button {
-      padding: 8px 15px;
-      font-size: 0.8rem;
-    }
+  .text-content {
+    @apply mb-[30px];
   }
-  
-  /* Extra Small Mobile (up to 320px) */
-  @media (max-width: 320px) {
-    .bodytext-container {
-      padding: 8px;
-    }
-    
-    .upper-text,
-    .lower-text {
-      font-size: 1.3rem;
-    }
-    
-    .tagline {
-      font-size: 0.8rem;
-    }
-    
-    .text-content {
-      margin-bottom: 20px;
-    }
-    
-    .button-group {
-      max-width: 100%;
-      gap: 8px;
-    }
-    
-    .gamify-button {
-      padding: 8px 12px;
-      font-size: 0.75rem;
-    }
-    
-    .account-button {
-      padding: 6px 12px;
-      font-size: 0.7rem;
-    }
+
+  .button-group {
+    @apply max-w-[300px] gap-[12px];
   }
+
+  .gamify-button {
+    @apply py-[12px] px-[20px] text-[0.95rem];
+  }
+
+  .account-button {
+    @apply py-[10px] px-[20px] text-[0.9rem];
+  }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .bodytext-container {
+    @apply p-[10px];
+  }
+
+  .tagline {
+    @apply text-[0.9rem];
+  }
+
+  .text-content {
+    @apply mb-[25px];
+  }
+
+  .button-group {
+    @apply max-w-[280px] gap-[10px];
+  }
+
+  .gamify-button {
+    @apply py-[10px] px-[15px] text-[0.85rem];
+  }
+
+  .account-button {
+    @apply py-[8px] px-[15px] text-[0.8rem];
+  }
+}
+
+/* Extra Small Mobile (max-width: 320px) */
+@media (max-width: 320px) {
+  .bodytext-container {
+    @apply p-[8px];
+  }
+
+  .upper-text,
+  .lower-text {
+    @apply text-[1.3rem];
+  }
+
+  .tagline {
+    @apply text-[0.8rem];
+  }
+
+  .text-content {
+    @apply mb-[20px];
+  }
+
+  .button-group {
+    @apply max-w-full gap-[8px];
+  }
+
+  .gamify-button {
+    @apply py-[8px] px-[12px] text-[0.75rem];
+  }
+
+  .account-button {
+    @apply py-[6px] px-[12px] text-[0.7rem];
+  }
+}

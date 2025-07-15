@@ -12,6 +12,7 @@ import { SidebarProvider, SidebarTrigger } from '../components/ui/sidebar'
 import { Flame, Calendar, Target, Award } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card"
 import { Badge } from "../components/ui/badge"
+import DarkModeToggle from '../components/DarkModeToggle'
 function Streak() {
     const streakData = useMemo(() => generateMockStreakData(), []);
     return (
@@ -20,13 +21,12 @@ function Streak() {
         <div className="flex min-h-screen w-full">
           <AppSidebar />
           <div className="flex-1 flex flex-col">
-            <header className="h-12 flex items-center border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-              <SidebarTrigger className="ml-4" />
-              <div className="ml-4">
-                <h1 className="font-semibold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                  Taskopolis
-                </h1>
+          <header className="h-12 flex items-center  backdrop-blur supports-[backdrop-filter]:bg-background/60">
+          <SidebarTrigger className="text-white hover:bg-oxford_blue-500 ml-4" />
+          <div className="ml-4">
+                <h1 className="text-2xl font-semibold text-white">Streak</h1>
               </div>
+              <div className="flex absolute right-9"><DarkModeToggle/></div>
             </header>
             <div className="min-h-screen bg-gradient-to-br from-background via-muted/20 to-accent/5 p-6">
       <div className="max-w-6xl mx-auto">

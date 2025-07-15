@@ -2,9 +2,16 @@ import React, { useState } from 'react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Badge } from './ui/badge';
-import { Card, CardContent } from './ui/card';
+import { Card, CardContent, CardDescription, CardHeader } from './ui/card';
 import { Checkbox } from './ui/checkbox';
 import { Plus, Trash2 } from 'lucide-react';
+import Building1 from '../assets/buildings/b1.png'
+import Building2 from '../assets/buildings/b2.png';
+import Building3 from '../assets/buildings/b3.png';
+import Building4 from '../assets/buildings/b4.png';
+import Building5 from '../assets/buildings/b5.png';
+import Building6 from '../assets/buildings/b6.png';
+import TaskAIButton from '../components/AIButton'
 
 interface Task {
   id: string;
@@ -42,6 +49,9 @@ export const TodoApp = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [newTask, setNewTask] = useState('');
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const [count, setCount] = useState<number>(0);
+  const buildingImages = [Building1, Building2, Building3, Building4, Building5, Building6];
+  const [flag,setFlag] = useState<boolean>(false);
 
   const addTask = () => {
     if (newTask.trim()) {
@@ -57,16 +67,32 @@ export const TodoApp = () => {
     }
   };
 
+  
+
   const deleteTask = (id: string) => {
     setTasks(tasks.filter(task => task.id !== id));
   };
 
-  const toggleTask = (id: string) => {
-    setTasks(tasks.map(task => 
-      task.id === id ? { ...task, completed: !task.completed } : task
-    ));
-  };
+  const handleCollect = () => {
+    if (!flag) {
+      setFlag(true);
+      console.log(flag)
+    } else {
+      alert("You've already collected all rewards!");
+    }
+  }
 
+  const toggleTask = (id: string) => {
+    const updatedTasks = tasks.map(task => 
+      task.id === id ? { ...task, completed: !task.completed } : task
+    );
+  
+    setTasks(updatedTasks);
+  
+    const completedCount = updatedTasks.filter(task => task.completed).length;
+    setCount(completedCount);
+  };
+  
   const toggleTag = (tagName: string) => {
     setSelectedTags(prev => 
       prev.includes(tagName) 
@@ -75,25 +101,26 @@ export const TodoApp = () => {
     );
   };
 
-  const completedTasks = tasks.filter(t => t.completed).length;
+  const completedTasks = count;
 
   return (
     <div className="min-h-screen bg-gradient-secondary px-4 py-8">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-8">
+      <div className="text-center mb-8">
           <h1 className="text-4xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-2">
             Beautiful Todo
           </h1>
           <p className="text-muted-foreground">Stay organized with style</p>
         </div>
 
+      <div className="flex flex-wrap justify-center gap-60 max-w-7xl mx-auto">
+        {/* Header */}
+        
         {/* Main Content - Two Column Layout */}
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Todo Section */}
           <div className="flex-1 max-w-2xl">
             {/* Add Task Card */}
-            <Card className="mb-8 shadow-card border-0 bg-card/50 backdrop-blur-sm">
+            <Card className="mb-8 dark:bg-oxford_blue-400 shadow-card border-0 bg-card/50 backdrop-blur-sm">
               <CardContent className="p-6">
                 <div className="space-y-4">
                   {/* Task Input */}
@@ -114,22 +141,26 @@ export const TodoApp = () => {
                   </div>
 
                   {/* Tag Selection */}
-                  <div className="space-y-2">
+                  <div className="space-y-2 text-white">
                     <p className="text-sm font-medium text-muted-foreground">Tags:</p>
                     <div className="flex flex-wrap gap-2">
                       {AVAILABLE_TAGS.map((tag) => (
-                        <Badge
-                          key={tag.name}
-                          variant={selectedTags.includes(tag.name) ? "default" : "outline"}
-                          className={`cursor-pointer transition-all duration-200 ${
-                            selectedTags.includes(tag.name) 
-                              ? `tag-${tag.name} text-white border-0 shadow-sm` 
-                              : 'hover:border-primary'
-                          }`}
-                          onClick={() => toggleTag(tag.name)}
-                        >
-                          {tag.name}
-                        </Badge>
+                        <div className=' rounded-xl m-0 p-0'>
+                          <Badge
+                        key={tag.name}
+                        variant={selectedTags.includes(tag.name) ? "default" : "outline"}
+                        className={` cursor-pointer transition-all duration-200 ${
+                          selectedTags.includes(tag.name) 
+                            ? 'bg-gold-700 text-black'
+                            : 'hover:border-oxford_blue-300'
+                        }`}
+                        onClick={() => toggleTag(tag.name)}
+                      >
+                        {tag.name}
+                      </Badge>
+                        </div>
+                        
+                      
                       ))}
                     </div>
                   </div>
@@ -172,6 +203,7 @@ export const TodoApp = () => {
                             </div>
                           )}
                         </div>
+                        <TaskAIButton query={task.text}/>
 
                         <Button
                           variant="ghost"
@@ -202,6 +234,41 @@ export const TodoApp = () => {
             )}
           </div>
         </div>
+        <Card className=" relative dark:bg-oxford_blue-400">
+        <CardHeader>
+            {count == 0 && (
+              <div>Every task is a step toward something bigger.</div>
+            )}
+            {count == 1 && (
+              <div>You did it—another task down, and your city’s rising!</div>
+            )}
+            {count == 2 && (
+              <div>Nice work! That building’s standing tall because of you.</div>
+            )}
+            {count == 3 && (
+              <div>Your focus just laid the foundation for something great.</div>
+            )}
+            {count == 4 && (
+              <div>You’re on fire—your city’s growing with every move you make..</div>
+            )}
+            {count == 5 && (
+              <div>Another win, another wall raised. Keep going!</div>
+            )}
+            {count == 6 && (
+              <div>That task? Handled. That skyline? Thanks to you.</div>
+            )}
+          </CardHeader>
+          <CardDescription>
+            <div className="flex items-center justify-center">
+              {count > 0 && <img src={buildingImages[count-1]} alt="" className="h-24 w-24 rounded-lg shadow-lg" />}
+              {count > 6 && <img src={buildingImages[5]} alt="" className="h-24 w-24 rounded-lg shadow-lg" />}
+            </div>
+          </CardDescription>
+          <Button onClick={handleCollect} className='flex items-center absolute bottom-4 left-1/2 transform -translate-x-1/2'>
+              Collect Reward
+          </Button>
+
+        </Card>
       </div>
     </div>
   );
