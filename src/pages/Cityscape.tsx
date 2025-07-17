@@ -44,10 +44,7 @@ const Cityscape = () => {
       </div>
       <div className="max-w-6xl mx-auto">
         <div className="mb-8">
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Your Cityscape
-          </h1>
-          <p className="text-muted-foreground font-bold mt-2 dark:text-mikado_yellow-300">Every task you finish fuels a city that never sleeps—your city, your reign, your momentum.</p>
+          <h1 className="text-muted-foreground font-bold mt-2 dark:text-mikado_yellow-300">Every task you finish fuels a city that never sleeps—your city, your reign, your momentum.</h1>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">

@@ -11,7 +11,18 @@ module.exports = {
        'yale_blue': { DEFAULT: '#003566', 100: '#000b14', 200: '#001529', 300: '#00203d', 400: '#002a52', 500: '#003566', 600: '#005fb8', 700: '#0a89ff', 800: '#5cb0ff', 900: '#add8ff' }, 
        'mikado_yellow': { DEFAULT: '#ffc300', 100: '#332700', 200: '#664e00', 300: '#997500', 400: '#cc9c00', 500: '#ffc300', 600: '#ffcf33', 700: '#ffdb66', 800: '#ffe799', 900: '#fff3cc' }, 
        'gold': { DEFAULT: '#ffd60a', 100: '#352c00', 200: '#6a5800', 300: '#9f8500', 400: '#d4b100', 500: '#ffd60a', 600: '#ffde3b', 700: '#ffe76c', 800: '#ffef9d', 900: '#fff7ce' } }
-    }
+    },
+    animation: {
+      floatSlow: 'float 6s ease-in-out infinite',
+      floatMedium: 'float 4s ease-in-out infinite',
+      floatFast: 'float 3s ease-in-out infinite',
+    },
+    keyframes: {
+      float: {
+        '0%, 100%': { transform: 'translateY(0)' },
+        '50%': { transform: 'translateY(-20px)' },
+      },
+    },
   },
   plugins: [],
 }

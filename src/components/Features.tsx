@@ -8,10 +8,7 @@ import {
 import {
   Trophy,
   CheckSquare,
-  BarChart3,
   Target,
-  Zap,
-  Timer,
   Building,
 } from "lucide-react";
 import rod from "../assets/patterns/rod.png";

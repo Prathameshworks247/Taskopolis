@@ -10,8 +10,6 @@ export const generateMockStreakData = () => {
   for (let i = 0; i < 365; i++) {
     const date = addDays(yearAgo, i);
     const random = Math.random();
-    
-    // Create realistic patterns - more activity on weekdays, some gaps
     let count = 0;
     if (random > 0.3) { // 70% chance of activity
       if (random > 0.8) count = Math.floor(Math.random() * 15) + 5; // High activity

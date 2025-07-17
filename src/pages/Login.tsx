@@ -1,20 +1,22 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Header from '../components/Header';
-import Social from '../components/Social';
-import LoginCard from '../components/LoginCard';
+import Social from "../components/Social";
+import LoginCard from "../components/LoginCard";
+import DarkModeToggle from "../components/DarkModeToggle";
+import FloatingShapes from "../components/ui/floatingItems";
+
 function Login() {
     return (
-        <div className='d-flex flex-column justify-content-center align-items-center'>
-        <div className='d-flex flex-column justify-content-center align-items-center' style={{ marginBottom: '100px', marginTop: '30px' }}>
-            <Header />
+      <div className="min-h-screen flex flex-col">
+        <header className="h-16 flex items-center justify-end px-8 relative z-10">
+          <DarkModeToggle />
+        </header>   
+        <FloatingShapes />
+        <div className="flex-1 flex items-center justify-center px-4">
+          <LoginCard />
         </div>
-        <div className='d-flex flex-column justify-content-center align-items-center' style={{ margin: '40px'}}>
-            <LoginCard />
-        </div>
-        <div className='d-flex' style={{ marginBottom: '300px' }}>
-        <Social/>
-        </div>
-        </div>
+        <div>
+        <Social />
+      </div>
+      </div>
     );
 }
 

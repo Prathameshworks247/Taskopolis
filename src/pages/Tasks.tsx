@@ -3,6 +3,7 @@ import { TodoApp } from '../components/TodoApp'
 import { AppSidebar } from '../components/AppSidebar'
 import { SidebarProvider, SidebarTrigger } from '../components/ui/sidebar'
 import DarkModeToggle from '../components/DarkModeToggle';
+import FloatingShapes from '../components/ui/floatingItems';
 
 
 function Tasks() {
@@ -18,8 +19,9 @@ function Tasks() {
           <div className="ml-4">
                 <h1 className="text-2xl font-semibold text-white">Tasks</h1>
               </div>
-              <div className="flex absolute right-9"><DarkModeToggle/></div>
+              <div className="flex absolute right-9 z-10"><DarkModeToggle/></div>
             </header>
+            <FloatingShapes/>
             <TodoApp/>
           </div>
         </div>

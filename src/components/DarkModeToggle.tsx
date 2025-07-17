@@ -30,7 +30,7 @@ export default function DarkModeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="relative inline-flex items-center justify-center w-full max-w-14 h-8 rounded-full transition-all duration-300 ease-in-out bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600"
+      className="relative inline-flex items-center justify-center w-full max-w-14 h-8 rounded-full transition-all duration-300 ease-in-out bg-red hover:bg-gray-300 dark:bg-red-200 dark:hover:bg-gray-600"
       aria-label="Toggle dark mode"
     >
       {/* Toggle track */}
@@ -40,7 +40,7 @@ export default function DarkModeToggle() {
       <div
         className={`absolute w-6 h-6 rounded-full transition-all duration-300 ease-in-out transform ${
           isDark ? 'translate-x-3' : '-translate-x-3'
-        } bg-white dark:bg-gray-800 shadow-lg flex items-center justify-center z-10`}
+        } bg-white dark:bg-gray-800 shadow-lg flex items-center justify-center z-100`}
       >
         {isDark ? (
           <Moon className="w-3 h-3 text-blue-400" />
