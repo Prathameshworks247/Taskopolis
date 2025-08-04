@@ -21,7 +21,7 @@ function Tasks() {
               </div>
               <div className="flex absolute right-9 z-10"><DarkModeToggle/></div>
             </header>
-            <FloatingShapes/>
+            {/* <FloatingShapes/> */}
             <TodoApp/>
           </div>
         </div>

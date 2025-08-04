@@ -1,6 +1,6 @@
 import { CheckSquare, Trophy, Building, Zap } from "lucide-react"
 import { NavLink, useLocation } from "react-router-dom"
-import image from "../assets/icons/image.png"
+import image from "../assets/icons/logo.png"
 import { useNavigate } from "react-router-dom"
 import {
   Sidebar,

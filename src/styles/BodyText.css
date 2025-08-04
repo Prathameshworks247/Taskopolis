@@ -1,23 +1,23 @@
 /* BodyText.module.css */
 
 .bodytext-container {
-  @apply flex flex-col justify-center items-center w-full max-w-[800px] p-5 text-center;
+  @apply flex flex-col justify-center items-center w-screen p-5 text-center ;
 }
 
 .text-content {
-  @apply w-full mb-10;
+  @apply w-full  sm:-mb-[4000px] md:-mb-[300px] lg:-mb-[250px];
 }
 
 .upper-text {
-  @apply text-[400%] font-black mb-[5px] leading-[1.2] font-['Inter'] text-[#009DFF] dark:text-mikado_yellow-400;
+  @apply md:text-[100px] lg:text-[120px] font-black mb-[5px] leading-[1.2] font-['Inter'] text-[#009DFF] dark:text-mikado_yellow-400 ;
 }
 
 .lower-text {
-  @apply text-[400%] font-black font-['Inter'] dark:text-oxford_blue-600;
+  @apply md:text-[90px] font-black font-['Inter'] dark:text-oxford_blue-600;
 }
 
 .tagline {
-  @apply text-[1.2rem] text-gray-500 leading-[1.5] mb-0 max-w-[500px] mx-auto;
+  @apply text-[1.2rem] text-gray-300 leading-[1.5] mb-0 max-w-[500px] mx-auto rounded-lg dark:bg-oxford_blue-100 ;
 }
 
 .button-group {

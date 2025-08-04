@@ -30,7 +30,7 @@ export default function DarkModeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="relative inline-flex items-center justify-center w-full max-w-14 h-8 rounded-full transition-all duration-300 ease-in-out bg-red hover:bg-gray-300 dark:bg-red-200 dark:hover:bg-gray-600"
+      className="relative inline-flex items-center justify-center w-full max-w-14 h-8 rounded-full transition-all duration-300 ease-in-out bg-red hover:bg-gray-300 dark:hover:bg-gray-600"
       aria-label="Toggle dark mode"
     >
       {/* Toggle track */}

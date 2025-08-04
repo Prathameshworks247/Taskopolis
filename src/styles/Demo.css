@@ -1,11 +1,11 @@
 /* Demo.module.css */
 
 .demo-container {
-  @apply flex flex-col justify-center items-center w-full max-w-[800px] p-5;
+  @apply flex gap-2 justify-between flex-wrap items-center w-screen m-5;
 }
 
 .demo-content {
-  @apply flex flex-row justify-center items-start w-full mb-10 gap-[30px];
+  @apply flex flex-row justify-center items-start w-2/5 mb-10 gap-[30px];
 }
 
 .message-section {
@@ -45,11 +45,11 @@
 }
 
 .building-container {
-  @apply flex justify-between items-center p-[20px] rounded-[10px] w-full max-w-[80%] bg-[#f8f9fa] border-[2px] dark:bg-oxford_blue-400 dark:border-oxford_blue-400 mr-[100px];
+  @apply flex justify-between items-center mx-20 md:mr-60 md:ml-0 md:m-20 rounded-[10px] w-2/3 md:max-w-[30%] bg-[#f8f9fa] border-[2px] dark:bg-oxford_blue-400 dark:border-oxford_blue-400 ;
 }
 
 .building-slot {
-  @apply flex justify-center items-center flex-1 h-[120px] p-[10px];
+  @apply flex justify-center items-center flex-1  h-[200px] p-[10px];
 }
 
 .building-image-1 {

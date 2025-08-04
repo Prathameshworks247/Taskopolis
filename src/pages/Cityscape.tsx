@@ -5,7 +5,7 @@ import Buildings from "../components/Buildings"
 import { SidebarProvider, SidebarTrigger } from "../components/ui/sidebar";
 import { AppSidebar } from "../components/AppSidebar";
 import DarkModeToggle from "../components/DarkModeToggle";
-
+import CityGrid from "../components/CityGrid";
 
 const Cityscape = () => {
   const tasks = [
@@ -25,6 +25,20 @@ const Cityscape = () => {
     { id: 14, completed: 4, date: new Date('2023-10-14') },
     { id: 15, completed: 6, date: new Date('2023-10-15') }    
     
+  ];
+  const sampleTaskGrid = [
+    [0, 2, 1, 0, 3, 0, 1, 2, 0, 1, 0, 2],
+    [1, 0, 3, 2, 0, 1, 0, 3, 1, 0, 2, 0],
+    [2, 1, 0, 0, 2, 3, 2, 0, 0, 3, 1, 1],
+    [0, 3, 2, 1, 0, 0, 1, 1, 2, 0, 0, 3],
+    [1, 0, 0, 3, 1, 2, 0, 0, 3, 2, 1, 0],
+    [3, 2, 1, 0, 0, 1, 3, 2, 0, 1, 0, 2],
+    [0, 1, 3, 2, 1, 0, 0, 1, 1, 0, 3, 0],
+    [2, 0, 0, 1, 3, 2, 1, 0, 0, 2, 0, 1],
+    [1, 3, 2, 0, 0, 0, 2, 3, 1, 0, 1, 0],
+    [0, 0, 1, 2, 1, 3, 0, 0, 0, 1, 2, 3],
+    [3, 1, 0, 0, 2, 0, 1, 1, 2, 0, 0, 1],
+    [0, 2, 1, 3, 0, 1, 0, 0, 1, 2, 3, 0]
   ];
   return (
     <>
@@ -140,13 +154,15 @@ const Cityscape = () => {
           ))}
         </div>
       </div>
+      <div className="w-[60%] h-[600px] border-2 border-gray-300 mt-10 mx-auto">
+  <CityGrid taskGrid={sampleTaskGrid} />
+</div>
+
     </div>
           </div>
         </div>
       </SidebarProvider>
-    
     </>
-    
   )
 }
 

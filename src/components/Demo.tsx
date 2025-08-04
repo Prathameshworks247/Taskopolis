@@ -52,23 +52,23 @@ function Demo() {
       switch (name) {
         case "item1":
           confetti({
-            particleCount: 100,
+            particleCount: 200,
             spread: 70,
-            origin: { x: 0.78, y: 0.36 },
+            origin: { x: 0.71, y: 0.60 },
           });
           break;
         case "item2":
           confetti({
-            particleCount: 1000,
+            particleCount: 200,
             spread: 70,
-            origin: { x: 0.78, y: 0.46 },
+            origin: { x: 0.71, y: 0.60 },
           });
           break;
         case "item3":
           confetti({
             particleCount: 200,
             spread: 70,
-            origin: { x: 0.78, y: 0.56 },
+            origin: { x: 0.71, y: 0.60 },
           });
           break;
         default:

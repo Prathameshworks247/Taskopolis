@@ -151,9 +151,10 @@ export const TodoApp = () => {
         (<Alert className="animate-bounce right-0 bottom-9 flex flex-col w-[30%] dark:text-oxford_blue-400 z-[9999] dark:bg-oxford_blue-900 absolute mt-4">
           <AlertTitle>Reward Collected</AlertTitle>
           <AlertDescription>
+            <img src={buildingImages[count-1]} className="h-24 w-auto" alt="" />
             Congratulations!!! You can view your cityscape transforming in the{" "}
             <Button
-              className="ml-1 h-5"
+              className="ml-1 h-5 text-white bg-oxford_blue-500"
               onClick={() => {
                 navigator("/cityscape");
               }}
@@ -308,7 +309,7 @@ export const TodoApp = () => {
         </div>
         
       </div>
-      <Card className=" w-max-40 ml-20 mr-20 w-96 h-96  dark:bg-oxford_blue-400">
+      <Card className="relative w-max-40 ml-20 mr-20 w-96 h-96  dark:bg-oxford_blue-400">
           <CardHeader>
             {count == 0 && (
               <div className="text-muted-foreground font-semibold dark:text-mikado_yellow-400">
@@ -359,14 +360,14 @@ export const TodoApp = () => {
                 <img
                   src={buildingImages[count-1]}
                   alt=""
-                  className="object-contain  h-24 w-24  rounded-lg shadow-lg"
+                  className="object-contain  h-44 w-44  rounded-lg shadow-lg"
                 />
               )}
               {count > 6 && (
                 <img
                   src={buildingImages[5]}
                   alt=""
-                  className="object-fit h-24 w-24  rounded-lg shadow-lg"
+                  className="object-fit h-44 w-44  rounded-lg shadow-lg"
                 />
               )}
             </div>
@@ -375,7 +376,7 @@ export const TodoApp = () => {
             <Button
               onClick={handleCollect}
               disabled = {flag}
-              className="flex dark:hover:brightness-150 items-center relative bottom-0 left-1/2 transform -translate-x-1/2"
+              className="flex dark:bg-mikado_yellow-200 absolute dark:hover:brightness-150 items-center bottom-2 left-1/2 transform -translate-x-1/2"
             >
               Collect Reward
             </Button>

@@ -1,10 +1,11 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom';
-import Header from '../components/Header';
+import { Header } from '../components/Header';
 import BodyText from '../components/BodyText';
 import Demo from '../components/Demo';
 import Social from '../components/Social';
 import Features from '../components/Features';
+import PricingSection from '../components/Pricing';
+
 function Landing() {
   const navigate = useNavigate();
 
@@ -17,22 +18,32 @@ function Landing() {
   };
 
   return (
-    <div className='d-flex flex-column justify-content-center align-items-center'>
-      <div className='d-flex flex-column justify-content-center align-items-center' style={{ marginBottom: '100px', marginTop: '30px' }}>
+    <div className="flex flex-col items-center justify-center px-4 md:px-8">
+      {/* Header (Resizable?) */}
       <Header />
-      </div>
 
-      <div className='d-flex gap-20 flex-wrap justify-content-center'>
-      <div className='d-flex'><BodyText handlesignup={handleSignup} handlelogin={handleLogin} /></div>
-      <div ><Demo/></div>
-      </div>
-      <div>
-      <Features/>
-      </div>
-      <div className='d-flex' style={{ marginBottom: '100px' }}>
-      <Social/>
-      </div>
-      
+      {/* Hero Section */}
+      <section id='' className="flex flex-wrap justify-center gap-16 my-7 w-full max-w-7xl">
+        <div>
+          <BodyText handlesignup={handleSignup} handlelogin={handleLogin} />
+        </div>
+        <div>
+          <Demo />
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section id='features' className="w-full max-w-7xl px-4">
+        <Features />
+      </section>
+
+      <section id ='pricing'>
+        <PricingSection/>
+      </section>
+      {/* Social Footer */}
+      <section id="socials" className="mt-12 mb-24">
+        <Social />
+      </section>
     </div>
   );
 }

@@ -4,17 +4,16 @@ import DarkModeToggle from '../components/DarkModeToggle';
 import FloatingShapes from '../components/ui/floatingItems';
 function Signup() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="reltive min-h-screen flex flex-col">
         <header className="h-16 flex items-center justify-end px-8 relative z-10">
           <DarkModeToggle />
         </header>
         <FloatingShapes />
+        <iframe src="https://lottie.host/embed/c554a34d-e313-41df-945e-2ed614f305ef/uGIYa86j1V.lottie" className="absolute w-full h-full object-fill dark:invert"/>
       <div className="flex-1 flex items-center justify-center px-4">
         <SignupCard />
       </div>
-      <div>
-        <Social />
-      </div>
+
     </div>
   );
 }
